@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousif Sarhan - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif; /* Main font */
+            color: white;
+            text-align: center;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind other content */
+            object-fit: cover; /* Cover the entire screen */
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            position: relative; /* Keep it on top of the video */
+            z-index: 1; /* Ensure it is above the video */
+        }
+        .navbar a {
+            margin: 0 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease; /* Smooth transition */
+        }
+        .navbar a:hover {
+            color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
+        }
+        .intro-section {
+            margin: 100px 0; /* Space above and below the section */
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif; /* Same font as section titles */
+            font-size: 48px; /* Title size */
+            letter-spacing: 2px; /* Letter spacing */
+        }
+        .sub-title {
+            font-family: 'Montserrat', sans-serif; /* Same font for the subtitle */
+            font-size: 24px; /* Subtitle size */
+            letter-spacing: 1px; /* Subtitle letter spacing */
+            margin-top: 10px; /* Space between title and subtitle */
+        }
+        /* Sections for navigation */
+        .section {
+            height: 100vh; /* Full viewport height for each section */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1); /* Light background for visibility */
+        }
+        .clickable-keyword {
+            font-size: 64px; /* Size for the clickable keyword */
+            color: white; /* Color for the keyword text */
+            cursor: pointer; /* Change cursor to pointer */
+            text-decoration: underline; /* Underline to indicate it's clickable */
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop class="video-background">
+        <source src="images/videos/C0297_2.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="navbar">
+        <a href="file:///Users/yossefkadry/Desktop/my%20website/index.html">HOME</a>
+        <a href="file:///Users/yossefkadry/Desktop/my%20website/motion.html">MOTION</a>
+        <a href="yousif.html">YOUSIF</a>
+        <a href="file:///Users/yossefkadry/Desktop/my%20website/clicksphoto.html">CLICKS</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="intro-section" id="home">
+        <h1 class="main-title">Yousif Sarhan</h1>
+        <h2 class="sub-title">Filmmaker / Photographer / Editor</h2>
+    </div>
+
+    <div class="section" id="motion">
+        <a href="file:///Users/yossefkadry/Desktop/my%20website/motion.html" class="clickable-keyword">Motion</a>
+    </div>
+
+    <div class="section" id="yousif">
+        <a href="yousif.html" class="clickable-keyword">Yousif</a>
+    </div>
+
+    <div class="section" id="clicks">
+        <a href="file:///Users/yossefkadry/Desktop/my%20website/clicksphoto.html" class="clickable-keyword">Clicks</a>
+    </div>
+
+    <div class="section" id="contact">
+        <a href="contact.html" class="clickable-keyword">Contact</a>
+    </div>
+
+</body>
+</html>
