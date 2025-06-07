@@ -1,234 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Akira+Expanded:wght@400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif; /* Main font */
-            background-color: #121212;
-            color: white;
-            text-align: center;
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: transparent; /* Transparent background */
-            padding: 15px 0;
-            position: relative;
-        }
-        .navbar a {
-            margin: 0 30px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease; /* Smooth transition */
-        }
-        .navbar a:hover {
-            color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
-        }
-        h1 {
-            margin: 40px 0;
-            font-size: 48px;
-            letter-spacing: 2px;
-        }
-        .section-title {
-            font-family: 'Playfair Display', serif; /* Use Playfair Display for section titles */
-            font-size: 36px;
-            margin: 20px 0;
-            text-transform: uppercase;
-            font-weight: bold; /* Make it bold */
-            color: white; /* Set to white */
-        }
-        .videos {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            padding: 0 10%;
-        }
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        video {
-            width: 100%; /* Full width */
-            height: auto; /* Maintain aspect ratio */
-            max-width: 82.5%; /* Limit max width */
-            border-radius: 10px; /* Rounded edges */
-            overflow: hidden; /* Ensures the rounded edges are maintained */
-        }
-        .video-title {
-            margin-top: 10px;
-            font-size: 28px;
-            font-weight: bold;
-            color: white; /* Title color */
-        }
-        .video-description {
-            font-size: 16px;
-            margin-top: 5px;
-            max-width: 300px;
-            color: #E0E0E0; /* Light white color for descriptions */
-        }
-        .contact-section {
-            margin: 40px 0;
-        }
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-        .contact-icon {
-            width: 40px; /* Icon size */
-            height: 40px; /* Icon size */
-        }
-        .social-text {
-            color: grey; /* Grey color for social media text */
-            font-size: 16px; /* Adjust font size as needed */
-            margin-top: 5px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Akira+Expanded:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif; /* Main font */
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: transparent; /* Transparent background */
+            padding: 15px 0;
+            position: sticky; /* Sticks to the top */
+            top: 0; /* Set to top */
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .navbar a {
+            margin: 0 15px; /* Adjusted margin for better spacing */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease; /* Smooth transition */
+        }
+        .navbar a:hover {
+            color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
+        }
+        h1 {
+            margin: 40px 0;
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif; /* Use Playfair Display for section titles */
+            font-size: 36px;
+            margin: 20px 0;
+            text-transform: uppercase;
+            font-weight: bold; /* Make it bold */
+            color: white; /* Set to white */
+        }
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 0 10%;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        video {
+            width: 100%; /* Full width */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Limit max width */
+            border-radius: 10px; /* Rounded edges */
+            overflow: hidden; /* Ensures the rounded edges are maintained */
+        }
+        .video-title {
+            margin-top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: white; /* Title color */
+        }
+        .video-description {
+            font-size: 16px;
+            margin-top: 5px;
+            max-width: 300px;
+            color: #E0E0E0; /* Light white color for descriptions */
+        }
+        .contact-section {
+            margin: 40px 0;
+        }
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .contact-icon {
+            width: 40px; /* Icon size */
+            height: 40px; /* Icon size */
+        }
+        .social-text {
+            color: grey; /* Grey color for social media text */
+            font-size: 16px; /* Adjust font size as needed */
+            margin-top: 5px;
+        }
+        @media (max-width: 600px) {
+            .navbar a {
+                margin: 0 10px; /* Adjusted margin for mobile */
+            }
+            .videos {
+                padding: 0 5%; /* Reduced padding for mobile */
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <h1>MOTION</h1>
+    <h1>MOTION</h1>
 
-  <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="motion.html">MOTION</a>
-        <a href="yousif.html">YOUSIF</a>
-        <a href="clicksphoto.html">CLICKS</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="motion.html">MOTION</a>
+        <a href="yousif.html">YOUSIF</a>
+        <a href="clicksphoto.html">CLICKS</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
 
-    <div class="videos">
-        <div class="section-title">Commercial</div>
-        <!-- Video 1 -->
-        <div class="video-container">
-            <video controls>
-                <source src="images/videos/C0115_4.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Sofitel</div>
-            <div class="video-description">A detailed look into the sofitel project showcasing luxury.</div>
-        </div>
-        <!-- Video 2 -->
-        <div class="video-container">
-            <video controls>
-                <source src="your-video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Antler</div>
-            <div class="video-description">Experience the beauty of nature through the Antler lens.</div>
-        </div>
-        <!-- Video 3 -->
-        <div class="video-container">
-            <video controls>
-                <source src="your-video3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Antler Icon Collection</div>
-            <div class="video-description">An overview of the Antler Icon Collection campaign.</div>
-        </div>
-        <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
+    <div class="videos">
+        <div class="section-title">Commercial</div>
+        <!-- Video 1 -->
+        <div class="video-container">
+            <video controls>
+                <source src="images/videos/C0115_4.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Sofitel</div>
+            <div class="video-description">A detailed look into the sofitel project showcasing luxury.</div>
+        </div>
+        <!-- Video 2 -->
+        <div class="video-container">
+            <video controls>
+                <source src="your-video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Antler</div>
+            <div class="video-description">Experience the beauty of nature through the Antler lens.</div>
+        </div>
+        <!-- Video 3 -->
+        <div class="video-container">
+            <video controls>
+                <source src="your-video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Antler Icon Collection</div>
+            <div class="video-description">An overview of the Antler Icon Collection campaign.</div>
+        </div>
+        <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
 
-        <div class="extra-spacer"></div> <!-- Extra space before Travel & Lifestyle -->
+        <div class="extra-spacer"></div> <!-- Extra space before Travel & Lifestyle -->
 
-        <div class="section-title">Travel & Lifestyle</div>
-        <!-- Video 4 -->
-        <div class="video-container">
-            <video controls>
-                <source src="your-video4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">RAW</div>
-            <div class="video-description">Exploring the essence of raw travel experiences.</div>
-        </div>
-        <!-- Video 5 -->
-        <div class="video-container">
-            <video controls>
-                <source src="your-video5.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Your Final Journey Capstone 2024</div>
-            <div class="video-description">A look into the journey of self-discovery through travel.</div>
-        </div>
-        <!-- Video 6 -->
-        <div class="video-container">
-            <video controls>
-                <source src="images/videos/C0297_2 2.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Skydive Dubai Desert Campus Highlights</div>
-            <div class="video-description">Soar above the vast Arabian Desert, witnessing endless golden dunes and the serene beauty of the landscape</div>
-        </div>
-        <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
+        <div class="section-title">Travel & Lifestyle</div>
+        <!-- Video 4 -->
+        <div class="video-container">
+            <video controls>
+                <source src="your-video4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">RAW</div>
+            <div class="video-description">Exploring the essence of raw travel experiences.</div>
+        </div>
+        <!-- Video 5 -->
+        <div class="video-container">
+            <video controls>
+                <source src="your-video5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Your Final Journey Capstone 2024</div>
+            <div class="video-description">A look into the journey of self-discovery through travel.</div>
+        </div>
+        <!-- Video 6 -->
+        <div class="video-container">
+            <video controls>
+                <source src="images/videos/C0297_2 2.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Skydive Dubai Desert Campus Highlights</div>
+            <div class="video-description">Soar above the vast Arabian Desert, witnessing endless golden dunes and the serene beauty of the landscape</div>
+        </div>
+        <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
 
-        <div class="extra-spacer"></div> <!-- Extra space after Hotel & Real Estate -->
+        <div class="extra-spacer"></div> <!-- Extra space after Hotel & Real Estate -->
 
-        <div class="section-title">Advertizment & creativity</div>
-        <!-- Video 7 -->
-        <div class="video-container">
-            <video controls>
-                <source src="images/videos/C0425_8.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Cinematic Boxing Ad</div>
-            <div class="video-description">inspired by the "Creed" film series, this ad captures the essence of boxing's challenges and triumphs.</div>
-        </div>
-        <!-- Video 8 -->
-        <div class="video-container">
-            <video controls>
-                <source src="images/videos/alan watts.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Desert</div>
-            <div class="video-description">Endless sand, endless possibility </div>
-        </div>
-        <!-- Video 9 -->
-        <div class="video-container">
-            <video controls>
-                <source src="images/videos/Sequence 01.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">Calo advertisement</div>
-            <div class="video-description"> fighting gym advertizing for healthy meals.</div>
-        </div>
-        <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
+        <div class="section-title">Advertizment & creativity</div>
+        <!-- Video 7 -->
+        <div class="video-container">
+            <video controls>
+                <source src="images/videos/C0425_8.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Cinematic Boxing Ad</div>
+            <div class="video-description">Inspired by the "Creed" film series, this ad captures the essence of boxing's challenges and triumphs.</div>
+        </div>
+        <!-- Video 8 -->
+        <div class="video-container">
+            <video controls>
+                <source src="images/videos/alan watts.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Desert</div>
+            <div class="video-description">Endless sand, endless possibility </div>
+        </div>
+        <!-- Video 9 -->
+        <div class="video-container">
+            <video controls>
+                <source src="images/videos/Sequence 01.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Calo advertisement</div>
+            <div class="video-description">Fighting gym advertising for healthy meals.</div>
+        </div>
+        <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
 
-        <!-- Video 10 -->
-        <div class="video-container">
-            <video controls>
-                <source src="images/videos/copy_4EDD581C-5207-4697-8179-FCFE99CA4AEA.MOV" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-title">sonyhandycam</div>
-            <div class="video-description">1990 sony handycam creative transition using affter effects.</div>
-        </div>
-    </div>
+        <!-- Video 10 -->
+        <div class="video-container">
+            <video controls>
+                <source src="images/videos/copy_4EDD581C-5207-4697-8179-FCFE99CA4AEA.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-title">Sony Handycam</div>
+            <div class="video-description">1990 Sony Handycam creative transition using After Effects.</div>
+        </div>
+    </div>
 
-    <div class="contact-section">
-        <p class="social-text">Email: test@example.com</p>
-        <div class="contact-icons">
-            <a href="https://instagram.com" target="_blank">
-                <img src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.12 PM.png" alt="Instagram" class="contact-icon">
-            </a>
-            <span class="social-text">Instagram</span>
-            <a href="https://youtube.com" target="_blank">
-                <img src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.31 PM.png" alt="YouTube" class="contact-icon">
-            </a>
-            <span class="social-text">YouTube</span>
-            <a href="https://linkedin.com" target="_blank">
-                <img src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.31 PM.png" alt="LinkedIn" class="contact-icon">
-            </a>
-            <span class="social-text">LinkedIn</span>
-        </div>
-    </div>
+    <div class="contact-section">
+        <p class="social-text">Email: test@example.com</p>
+        <div class="contact-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.12 PM.png" alt="Instagram" class="contact-icon">
+            </a>
+            <span class="social-text">Instagram</span>
+            <a href="https://youtube.com" target="_blank">
+                <img src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.31 PM.png" alt="YouTube" class="contact-icon">
+            </a>
+            <span class="social-text">YouTube</span>
+            <a href="https://linkedin.com" target="_blank">
+                <img src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.31 PM.png" alt="LinkedIn" class="contact-icon">
+            </a>
+            <span class="social-text">LinkedIn</span>
+        </div>
+    </div>
 
 </body>
 </html>
