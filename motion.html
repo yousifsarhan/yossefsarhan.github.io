@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Akira+Expanded:wght@400&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Akira+Expanded:wght@400&display=swap"
+    rel="stylesheet"
+  />
   <style>
     body {
       margin: 0;
@@ -13,24 +16,147 @@
       color: white;
       text-align: center;
     }
-    /* (CSS styling unchanged, omitted for brevity) */
-    .navbar { /* ... */ }
-    .navbar a { /* ... */ }
-    /* ... other styles ... */
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+      padding: 15px 0;
+      position: relative;
+    }
+
+    .navbar a {
+      margin: 0 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      margin: 40px 0;
+      font-size: 48px;
+      letter-spacing: 2px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin: 20px 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+    }
+
     .videos {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 0 10%;
     }
-    /* ... more styles ... */
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      max-width: 82.5%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .video-title {
+      margin-top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .video-description {
+      font-size: 16px;
+      margin-top: 5px;
+      max-width: 300px;
+      color: #E0E0E0;
+    }
+
+    .contact-section {
+      margin: 40px 0;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .social-text {
+      color: grey;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
     @media (max-width: 768px) {
-      /* Responsive adjustments */
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        background-color: #121212;
+      }
+
+      .navbar a {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
       .videos {
         grid-template-columns: 1fr;
         padding: 0 5%;
       }
-      /* ... other responsive styles ... */
+
+      .video-title {
+        font-size: 22px;
+      }
+
+      .video-description {
+        font-size: 14px;
+        max-width: 90%;
+      }
+
+      .contact-icons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contact-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .social-text {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -47,11 +173,9 @@
   </div>
 
   <div class="videos">
-    <!-- Section title -->
     <div class="section-title">Commercial</div>
 
     <div class="video-container">
-      <!-- Added playsinline attribute, and using #t=0.1 in source for preview -->
       <video controls preload="metadata" playsinline>
         <source src="images/videos/C0115_4.MP4#t=0.1" type="video/mp4" />
       </video>
@@ -130,7 +254,9 @@
         <source src="images/videos/alan watts.MP4#t=0.1" type="video/mp4" />
       </video>
       <div class="video-title">Desert</div>
-      <div class="video-description">Endless sand, endless possibility.</div>
+      <div class="video-description">
+        Endless sand, endless possibility.
+      </div>
     </div>
 
     <div class="video-container">
@@ -158,26 +284,36 @@
     <p class="social-text">Email: test@example.com</p>
     <div class="contact-icons">
       <a href="https://instagram.com" target="_blank">
-        <img src="path/to/instagram-icon.png" alt="Instagram" class="contact-icon" />
+        <img
+          src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.12 PM.png"
+          alt="Instagram"
+          class="contact-icon"
+        />
       </a>
       <span class="social-text">Instagram</span>
       <a href="https://youtube.com" target="_blank">
-        <img src="path/to/youtube-icon.png" alt="YouTube" class="contact-icon" />
+        <img
+          src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.31 PM.png"
+          alt="YouTube"
+          class="contact-icon"
+        />
       </a>
       <span class="social-text">YouTube</span>
       <a href="https://linkedin.com" target="_blank">
-        <img src="path/to/linkedin-icon.png" alt="LinkedIn" class="contact-icon" />
+        <img
+          src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-05 at 11.41.31 PM.png"
+          alt="LinkedIn"
+          class="contact-icon"
+        />
       </a>
       <span class="social-text">LinkedIn</span>
     </div>
   </div>
 
-  <!-- Script to reset video to start on first play (and ensure inline play on iPhones) -->
+  <!-- Reset videos to start at 0 on first play -->
   <script>
-    // For each video, on the first play, reset time to 0 (in case src has a #t fragment for preview)
     document.querySelectorAll('video').forEach(video => {
       video.addEventListener('play', () => {
-        // Reset to start of video on first play
         video.currentTime = 0;
       }, { once: true });
     });
