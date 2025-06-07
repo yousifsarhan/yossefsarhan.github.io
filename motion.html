@@ -318,7 +318,8 @@
       if (window.innerWidth <= 768) {
         document.querySelectorAll('video').forEach(v => {
           if (!v.hasAttribute('autoplay'))    v.setAttribute('autoplay', '');
-      
+          if (!v.hasAttribute('muted'))       v.setAttribute('muted', '');
+          if (!v.hasAttribute('playsinline')) v.setAttribute('playsinline', '');
           v.load();
           v.play().catch(() => {});
         });
@@ -327,7 +328,6 @@
     window.addEventListener('DOMContentLoaded', enableMobileAutoplay);
     window.addEventListener('resize', enableMobileAutoplay);
   </script>
-
-
 </body>
-</html> 
+</html>
+
