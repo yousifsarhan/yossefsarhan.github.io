@@ -64,14 +64,29 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
     }
 
-    video {
+    /* show pointer and play icon hint */
+    .video-container video {
       width: 100%;
       height: auto;
       max-width: 82.5%;
       border-radius: 10px;
       overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-container::after {
+      content: "▶";
+      font-size: 48px;
+      color: white;
+      position: absolute;
+      top: calc(50% + 10px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0.6;
     }
 
     .video-title {
@@ -157,6 +172,10 @@
       .social-text {
         font-size: 14px;
       }
+
+      .video-container::after {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
@@ -176,7 +195,7 @@
     <div class="section-title">Commercial</div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="images/videos/C0115_4.MP4" type="video/mp4" />
       </video>
       <div class="video-title">Sofitel</div>
@@ -186,7 +205,7 @@
     </div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="your-video2.mp4" type="video/mp4" />
       </video>
       <div class="video-title">Antler</div>
@@ -196,7 +215,7 @@
     </div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="your-video3.mp4" type="video/mp4" />
       </video>
       <div class="video-title">Antler Icon Collection</div>
@@ -208,7 +227,7 @@
     <div class="section-title">Travel & Lifestyle</div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="your-video4.mp4" type="video/mp4" />
       </video>
       <div class="video-title">RAW</div>
@@ -218,7 +237,7 @@
     </div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="your-video5.mp4" type="video/mp4" />
       </video>
       <div class="video-title">Your Final Journey Capstone 2024</div>
@@ -228,7 +247,7 @@
     </div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="images/videos/C0297_2 2.MP4" type="video/mp4" />
       </video>
       <div class="video-title">
@@ -243,7 +262,7 @@
     <div class="section-title">Advertizment & Creativity</div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="images/videos/C0425_8.MP4" type="video/mp4" />
       </video>
       <div class="video-title">Cinematic Boxing Ad</div>
@@ -254,7 +273,7 @@
     </div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="images/videos/alan watts.MP4" type="video/mp4" />
       </video>
       <div class="video-title">Desert</div>
@@ -262,7 +281,7 @@
     </div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="images/videos/Sequence 01.MP4" type="video/mp4" />
       </video>
       <div class="video-title">Calo Advertisement</div>
@@ -272,7 +291,7 @@
     </div>
 
     <div class="video-container">
-      <video controls preload="metadata">
+      <video controls preload="metadata" playsinline>
         <source src="images/videos/copy_4EDD581C-5207-4697-8179-FCFE99CA4AEA.MOV" type="video/mp4" />
       </video>
       <div class="video-title">Sony Handycam</div>
@@ -311,23 +330,6 @@
       <span class="social-text">LinkedIn</span>
     </div>
   </div>
-
-  <!-- Mobile-only autoplay script -->
-  <script>
-    function enableMobileAutoplay() {
-      if (window.innerWidth <= 768) {
-        document.querySelectorAll('video').forEach(v => {
-        
-          if (!v.hasAttribute('muted'))       v.setAttribute('muted', '');
-          if (!v.hasAttribute('playsinline')) v.setAttribute('playsinline', '');
-          v.load();
-          v.play().catch(() => {});
-        });
-      }
-    }
-    window.addEventListener('DOMContentLoaded', enableMobileAutoplay);
-    window.addEventListener('resize', enableMobileAutoplay);
-  </script>
 
 </body>
 </html>
