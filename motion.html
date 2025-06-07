@@ -110,7 +110,6 @@
       margin-top: 5px;
     }
 
-    /* Responsive styles for mobile */
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -177,97 +176,109 @@
     <div class="section-title">Commercial</div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="/Users/yossefkadry/Desktop/C0115_4 2.MP4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Sofitel</div>
-      <div class="video-description">A detailed look into the Sofitel project showcasing luxury.</div>
+      <div class="video-description">
+        A detailed look into the Sofitel project showcasing luxury.
+      </div>
     </div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="your-video2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Antler</div>
-      <div class="video-description">Experience the beauty of nature through the Antler lens.</div>
+      <div class="video-description">
+        Experience the beauty of nature through the Antler lens.
+      </div>
     </div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="your-video3.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Antler Icon Collection</div>
-      <div class="video-description">An overview of the Antler Icon Collection campaign.</div>
+      <div class="video-description">
+        An overview of the Antler Icon Collection campaign.
+      </div>
     </div>
 
     <div class="section-title">Travel & Lifestyle</div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="your-video4.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">RAW</div>
-      <div class="video-description">Exploring the essence of raw travel experiences.</div>
+      <div class="video-description">
+        Exploring the essence of raw travel experiences.
+      </div>
     </div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="your-video5.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Your Final Journey Capstone 2024</div>
-      <div class="video-description">A look into the journey of self-discovery through travel.</div>
+      <div class="video-description">
+        A look into the journey of self-discovery through travel.
+      </div>
     </div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="images/videos/C0297_2 2.MP4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
-      <div class="video-title">Skydive Dubai Desert Campus Highlights</div>
-      <div class="video-description">Soar above the vast Arabian Desert, witnessing endless golden dunes and the serene beauty of the landscape.</div>
+      <div class="video-title">
+        Skydive Dubai Desert Campus Highlights
+      </div>
+      <div class="video-description">
+        Soar above the vast Arabian Desert, witnessing endless golden dunes
+        and the serene beauty of the landscape.
+      </div>
     </div>
 
     <div class="section-title">Advertizment & Creativity</div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="images/videos/C0425_8.MP4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Cinematic Boxing Ad</div>
-      <div class="video-description">Inspired by the "Creed" film series, this ad captures the essence of boxing's challenges and triumphs.</div>
+      <div class="video-description">
+        Inspired by the "Creed" film series, this ad captures the essence of
+        boxing's challenges and triumphs.
+      </div>
     </div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="images/videos/alan watts.MP4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Desert</div>
       <div class="video-description">Endless sand, endless possibility.</div>
     </div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="images/videos/Sequence 01.MP4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Calo Advertisement</div>
-      <div class="video-description">Fighting gym advertising for healthy meals.</div>
+      <div class="video-description">
+        Fighting gym advertising for healthy meals.
+      </div>
     </div>
 
     <div class="video-container">
-      <video controls>
+      <video controls preload="metadata">
         <source src="images/videos/copy_4EDD581C-5207-4697-8179-FCFE99CA4AEA.MOV" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <div class="video-title">Sony Handycam</div>
-      <div class="video-description">1990 Sony Handycam creative transition using After Effects.</div>
+      <div class="video-description">
+        1990 Sony Handycam creative transition using After Effects.
+      </div>
     </div>
   </div>
 
@@ -297,5 +308,27 @@
           class="contact-icon"
         />
       </a>
-      <span class="social-text">Lin
+      <span class="social-text">LinkedIn</span>
+    </div>
+  </div>
+
+  <!-- Mobile-only autoplay script -->
+  <script>
+    function enableMobileAutoplay() {
+      if (window.innerWidth <= 768) {
+        document.querySelectorAll('video').forEach(v => {
+          if (!v.hasAttribute('autoplay'))    v.setAttribute('autoplay', '');
+          if (!v.hasAttribute('muted'))       v.setAttribute('muted', '');
+          if (!v.hasAttribute('playsinline')) v.setAttribute('playsinline', '');
+          v.load();
+          v.play().catch(() => {});
+        });
+      }
+    }
+    window.addEventListener('DOMContentLoaded', enableMobileAutoplay);
+    window.addEventListener('resize', enableMobileAutoplay);
+  </script>
+</body>
+</html>
+
 
