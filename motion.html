@@ -18,12 +18,10 @@
             justify-content: center;
             background-color: transparent; /* Transparent background */
             padding: 15px 0;
-            position: sticky; /* Sticks to the top */
-            top: 0; /* Set to top */
-            z-index: 1000; /* Ensure it stays above other content */
+            position: relative;
         }
         .navbar a {
-            margin: 0 15px; /* Adjusted margin for better spacing */
+            margin: 0 30px;
             color: white;
             text-decoration: none;
             font-weight: bold;
@@ -48,7 +46,7 @@
         }
         .videos {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 0 10%;
         }
@@ -60,7 +58,7 @@
         video {
             width: 100%; /* Full width */
             height: auto; /* Maintain aspect ratio */
-            max-width: 100%; /* Limit max width */
+            max-width: 82.5%; /* Limit max width */
             border-radius: 10px; /* Rounded edges */
             overflow: hidden; /* Ensures the rounded edges are maintained */
         }
@@ -95,19 +93,21 @@
             margin-top: 5px;
         }
         @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column; /* Stack navigation items */
+            }
             .navbar a {
-                margin: 0 10px; /* Adjusted margin for mobile */
+                margin: 10px 0; /* Margin for stacked items */
             }
             .videos {
-                padding: 0 5%; /* Reduced padding for mobile */
+                grid-template-columns: 1fr; /* Single column layout for mobile */
+                padding: 0 5%; /* Adjust padding for mobile */
             }
         }
     </style>
 </head>
 <body>
-
     <h1>MOTION</h1>
-
     <div class="navbar">
         <a href="index.html">HOME</a>
         <a href="motion.html">MOTION</a>
@@ -115,7 +115,6 @@
         <a href="clicksphoto.html">CLICKS</a>
         <a href="contact.html">CONTACT</a>
     </div>
-
     <div class="videos">
         <div class="section-title">Commercial</div>
         <!-- Video 1 -->
@@ -146,9 +145,7 @@
             <div class="video-description">An overview of the Antler Icon Collection campaign.</div>
         </div>
         <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
-
         <div class="extra-spacer"></div> <!-- Extra space before Travel & Lifestyle -->
-
         <div class="section-title">Travel & Lifestyle</div>
         <!-- Video 4 -->
         <div class="video-container">
@@ -178,9 +175,7 @@
             <div class="video-description">Soar above the vast Arabian Desert, witnessing endless golden dunes and the serene beauty of the landscape</div>
         </div>
         <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
-
         <div class="extra-spacer"></div> <!-- Extra space after Hotel & Real Estate -->
-
         <div class="section-title">Advertizment & creativity</div>
         <!-- Video 7 -->
         <div class="video-container">
@@ -198,7 +193,7 @@
                 Your browser does not support the video tag.
             </video>
             <div class="video-title">Desert</div>
-            <div class="video-description">Endless sand, endless possibility </div>
+            <div class="video-description">Endless sand, endless possibility</div>
         </div>
         <!-- Video 9 -->
         <div class="video-container">
@@ -210,7 +205,6 @@
             <div class="video-description">Fighting gym advertising for healthy meals.</div>
         </div>
         <div class="big-spacer"></div> <!-- Bigger spacer after every three videos -->
-
         <!-- Video 10 -->
         <div class="video-container">
             <video controls>
@@ -221,7 +215,6 @@
             <div class="video-description">1990 Sony Handycam creative transition using After Effects.</div>
         </div>
     </div>
-
     <div class="contact-section">
         <p class="social-text">Email: test@example.com</p>
         <div class="contact-icons">
@@ -239,6 +232,5 @@
             <span class="social-text">LinkedIn</span>
         </div>
     </div>
-
 </body>
 </html>
