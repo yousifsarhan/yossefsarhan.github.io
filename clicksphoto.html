@@ -84,39 +84,104 @@
       margin: 20px auto;
       max-width: 800px;
     }
-    .video-wrapper { position: relative; width: 100%; border-radius: 10px; }
-    video { width: 100%; border-radius: 10px; display: none; cursor: pointer; }
-    .cover-image { width: 100%; border-radius: 10px; cursor: pointer; }
-    .sound-control { position: absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.5); border-radius:50%; padding:5px; cursor:pointer; display:none; }
-    .sound-icon { width:25px; height:auto; }
-    /* replaced play-icon style to size the SVG */
-    .play-icon { 
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      width:60px;
-      height:60px;
-      pointer-events:auto;
-      cursor:pointer;
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 10px;
     }
-    .play-icon svg { width:100%; height:100%; }
-    .video-wrapper:hover .sound-control { display:block; }
+    video {
+      width: 100%;
+      border-radius: 10px;
+      display: none;
+      cursor: pointer;
+    }
+    .cover-image {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .sound-control {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+      display: none;
+    }
+    .sound-icon {
+      width: 25px;
+      height: auto;
+    }
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+    .play-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .video-wrapper:hover .sound-control {
+      display: block;
+    }
 
-    .contact-section { margin:40px 0; padding:20px; }
-    .contact-section h2 { font-size:28px; }
-    .contact-section p { font-size:16px; margin:5px 0; }
-    .contact-icons { display:flex; justify-content:center; margin-top:10px; }
-    .contact-icon { width:30px; height:auto; margin:0 10px; }
+    .contact-section {
+      margin: 40px 0;
+      padding: 20px;
+    }
+    .contact-section h2 {
+      font-size: 28px;
+    }
+    .contact-section p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .contact-icon {
+      width: 30px;
+      height: auto;
+      margin: 0 10px;
+    }
 
-    @media (max-width:768px) {
-      .navbar { flex-direction: column; align-items: center; padding:20px 0; }
-      .navbar a { margin:10px 0; font-size:16px; }
-      .image-grid { grid-template-columns:1fr !important; padding:0 10px; }
-      .video-container { grid-template-columns:1fr; padding:0 5%; }
-      h1 { font-size:36px; margin-top:20px; }
-      h2 { font-size:28px; }
-      .quote { font-size:14px; }
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+      }
+      .navbar a {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+      .image-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+      }
+      .video-container {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+      }
+      h1 {
+        font-size: 36px;
+        margin-top: 20px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+      .quote {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -132,7 +197,48 @@
 
   <h1>CLICKS / REELS</h1>
 
-  <!-- ... your image grids ... -->
+  <!-- Image Grid 1: TRAVEL -->
+  <h2>TRAVEL</h2>
+  <div class="image-grid grid1">
+    <img src="images/travel1.jpg" alt="Travel Image 1">
+    <img src="images/travel2.jpg" alt="Travel Image 2">
+    <img src="images/travel3.jpg" alt="Travel Image 3">
+  </div>
+  <div class="quote">“Travel is the only thing you buy that makes you richer.”</div>
+
+  <!-- Image Grid 2: STREETS -->
+  <h2>STREETS</h2>
+  <div class="image-grid grid2">
+    <img src="images/street1.jpg" alt="Street Image 1">
+    <img src="images/street2.jpg" alt="Street Image 2">
+    <img src="images/street3.jpg" alt="Street Image 3">
+    <img src="images/street4.jpg" alt="Street Image 4">
+  </div>
+  <div class="quote">“There’s beauty in the everyday chaos.”</div>
+
+  <!-- Image Grid 3: FRAMES -->
+  <h2>FRAMES</h2>
+  <div class="image-grid grid3">
+    <img src="images/frame1.jpg" alt="Frame Image 1">
+    <img src="images/frame2.jpg" alt="Frame Image 2">
+    <img src="images/frame3.jpg" alt="Frame Image 3">
+    <img src="images/frame4.jpg" alt="Frame Image 4">
+  </div>
+  <div class="quote">“Photography is the story I fail to put into words.”</div>
+
+  <!-- Image Grid 4: MOMENTS -->
+  <h2>MOMENTS</h2>
+  <div class="image-grid grid4">
+    <img src="images/moment1.jpg" alt="Moment Image 1">
+    <img src="images/moment2.jpg" alt="Moment Image 2">
+    <img src="images/moment3.jpg" alt="Moment Image 3">
+    <img src="images/moment4.jpg" alt="Moment Image 4">
+    <img src="images/moment5.jpg" alt="Moment Image 5">
+    <img src="images/moment6.jpg" alt="Moment Image 6">
+    <img src="images/moment7.jpg" alt="Moment Image 7">
+    <img src="images/moment8.jpg" alt="Moment Image 8">
+  </div>
+  <div class="quote">“Freeze the moment. Frame the soul.”</div>
 
   <!-- REELS / VIDEOS section -->
   <h1>REELS</h1>
@@ -140,12 +246,11 @@
     <div class="video-wrapper">
       <img src="images/cover1.jpg" alt="Cover 1" class="cover-image" onclick="startVideo(this)">
       <video id="video1" loop>
-         <source src="videos/video1.mp4" type="video/mp4">
+        <source src="videos/video1.mp4" type="video/mp4">
       </video>
       <div class="sound-control" onclick="toggleMute('video1', event)">
         <img src="images/music_icon_white.png" class="sound-icon" />
       </div>
-      <!-- Inline SVG play button instead of emoji -->
       <div class="play-icon" onclick="startVideo(this)">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <polygon points="30,20 70,50 30,80" fill="white"/>
@@ -184,7 +289,25 @@
     </div>
   </div>
 
-  <!-- ... your contact section ... -->
+  <div class="contact-section">
+    <p class="social-text">Email: test@example.com</p>
+    <div class="contact-icons">
+      <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
+        <img src="images/instalogo.png" alt="Instagram" class="contact-icon" />
+      </a>
+      <span class="social-text">Instagram</span>
+
+      <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
+        <img src="images/youtubelogo.png" alt="YouTube" class="contact-icon" />
+      </a>
+      <span class="social-text">YouTube</span>
+
+      <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
+        <img src="images/linkedinlogo.png" alt="LinkedIn" class="contact-icon" />
+      </a>
+      <span class="social-text">LinkedIn</span>
+    </div>
+  </div>
 
   <script>
     function startVideo(el) {
@@ -209,14 +332,16 @@
         }
       };
     }
-    function toggleMute(id,e) {
+    function toggleMute(id, e) {
       e.stopPropagation();
       const v = document.getElementById(id);
       v.muted = !v.muted;
     }
   </script>
+
 </body>
 </html>
+
 
 
 
