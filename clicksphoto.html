@@ -1,391 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CLICKS / REELS - Yousif Sarhan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #121212;
-            color: white;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CLICKS / REELS - Yousif Sarhan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #121212;
+      color: white;
+      text-align: center;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: transparent;
-            padding: 15px 0;
-        }
+    /* Navigation bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+      padding: 15px 0;
+    }
+    .navbar a {
+      margin: 0 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
 
-        .navbar a {
-            margin: 0 30px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
+    h1 {
+      margin: 40px 0 20px;
+      font-size: 48px;
+      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif;
+    }
+    h2 {
+      margin: 40px 0 10px;
+      font-size: 32px;
+      font-family: 'Playfair Display', serif;
+    }
+    .quote {
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
 
-        .navbar a:hover {
-            color: rgba(255, 255, 255, 0.8);
-        }
+    .image-grid {
+      display: grid;
+      gap: 5px;
+      margin: 0 auto 50px;
+      max-width: 800px;
+    }
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    /* Unique layouts for each grid */
+    .grid1 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; grid-template-areas: "a b" "a c"; }
+    .grid1 img:nth-child(1) { grid-area: a; }
+    .grid1 img:nth-child(2) { grid-area: b; }
+    .grid1 img:nth-child(3) { grid-area: c; }
 
-        h1 {
-            margin: 40px 0 20px;
-            font-size: 48px;
-            letter-spacing: 2px;
-            font-family: 'Playfair Display', serif;
-        }
+    .grid2 { grid-template-columns: repeat(3, 1fr); grid-template-areas: "d e f" "g g f"; }
+    .grid2 img:nth-child(1) { grid-area: d; }
+    .grid2 img:nth-child(2) { grid-area: e; }
+    .grid2 img:nth-child(3) { grid-area: f; }
+    .grid2 img:nth-child(4) { grid-area: g; }
 
-        h2 {
-            margin: 40px 0 10px;
-            font-size: 32px;
-            font-family: 'Playfair Display', serif;
-        }
+    .grid3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; }
+    .grid4 { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); }
 
-        .quote {
-            font-size: 16px;
-            color: #aaa;
-            margin-bottom: 30px;
-        }
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    .video-wrapper { position: relative; width: 100%; border-radius: 10px; }
+    video { width: 100%; border-radius: 10px; display: none; cursor: pointer; }
+    .cover-image { width: 100%; border-radius: 10px; cursor: pointer; }
+    .sound-control { position: absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.5); border-radius:50%; padding:5px; cursor:pointer; display:none; }
+    .sound-icon { width:25px; height:auto; }
+    .play-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2em; color:white; pointer-events:auto; cursor:pointer; }
+    .video-wrapper:hover .sound-control { display:block; }
 
-        .image-grid {
-            display: grid;
-            gap: 5px;
-            margin: 0 auto 50px;
-            max-width: 800px;
-        }
+    .contact-section { margin:40px 0; padding:20px; }
+    .contact-section h2 { font-size:28px; }
+    .contact-section p { font-size:16px; margin:5px 0; }
+    .contact-icons { display:flex; justify-content:center; margin-top:10px; }
+    .contact-icon { width:30px; height:auto; margin:0 10px; }
 
-        .image-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        /* Unique layouts for each grid */
-        .grid1 {
-            grid-template-columns: 2fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-template-areas:
-                "a b"
-                "a c";
-        }
-        .grid1 img:nth-child(1) { grid-area: a; }
-        .grid1 img:nth-child(2) { grid-area: b; }
-        .grid1 img:nth-child(3) { grid-area: c; }
-
-        .grid2 {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-areas:
-                "d e f"
-                "g g f";
-        }
-        .grid2 img:nth-child(1) { grid-area: d; }
-        .grid2 img:nth-child(2) { grid-area: e; }
-        .grid2 img:nth-child(3) { grid-area: f; }
-        .grid2 img:nth-child(4) { grid-area: g; }
-
-        .grid3 {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto auto;
-        }
-
-        .grid4 {
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-        }
-
-        /* Video section below */
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        video {
-            width: 100%;
-            border-radius: 10px;
-            display: none;
-            cursor: pointer;
-        }
-
-        .cover-image {
-            width: 100%;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .sound-control {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            padding: 5px;
-            cursor: pointer;
-            display: none;
-        }
-
-        .sound-icon {
-            width: 25px;
-            height: auto;
-        }
-
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            font-size: 2em;
-            color: white;
-            display: block;
-            pointer-events: auto;
-            cursor: pointer;
-        }
-
-        .video-wrapper:hover .sound-control {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .video-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .contact-section {
-            margin: 40px 0;
-            padding: 20px;
-        }
-
-        .contact-section h2 {
-            font-size: 28px;
-        }
-
-        .contact-section p {
-            font-size: 16px;
-            margin: 5px 0;
-        }
-
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .contact-icon {
-            width: 30px;
-            height: auto;
-            margin: 0 10px;
-        }
-    </style>
+    @media (max-width:768px) {
+      .navbar { flex-direction: column; align-items: center; padding:20px 0; }
+      .navbar a { margin:10px 0; font-size:16px; }
+      .image-grid { grid-template-columns:1fr !important; padding:0 10px; }
+      .video-container { grid-template-columns:1fr; padding:0 5%; }
+      h1 { font-size:36px; margin-top:20px; }
+      h2 { font-size:28px; }
+      .quote { font-size:14px; }
+    }
+  </style>
 </head>
 <body>
 
   <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="motion.html">MOTION</a>
-        <a href="yousif.html">YOUSIF</a>
-        <a href="clicksphoto.html">CLICKS</a>
-        <a href="contact.html">CONTACT</a>
+    <a href="index.html">HOME</a>
+    <a href="motion.html">MOTION</a>
+    <a href="yousif.html">YOUSIF</a>
+    <a href="clicksphoto.html">CLICKS</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+
+  <h1>CLICKS / REELS</h1>
+
+  <!-- Image Grid 1: TRAVEL -->
+  <h2>TRAVEL</h2>
+  <div class="image-grid grid1">
+    <img src="images/travel1.jpg" alt="Travel Image 1">
+    <img src="images/travel2.jpg" alt="Travel Image 2">
+    <img src="images/travel3.jpg" alt="Travel Image 3">
+    <img src="images/travel4.jpg" alt="Travel Image 4">
+    <img src="images/travel5.jpg" alt="Travel Image 5">
+  </div>
+  <div class="quote">“Travel is the only thing you buy that makes you richer.”</div>
+
+  <!-- Image Grid 2: STREETS -->
+  <h2>STREETS</h2>
+  <div class="image-grid grid2">
+    <img src="images/street1.jpg" alt="Street Image 1">
+    <img src="images/street2.jpg" alt="Street Image 2">
+    <img src="images/street3.jpg" alt="Street Image 3">
+    <img src="images/street4.jpg" alt="Street Image 4">
+  </div>
+  <div class="quote">“There’s beauty in the everyday chaos.”</div>
+
+  <!-- Image Grid 3: FRAMES -->
+  <h2>FRAMES</h2>
+  <div class="image-grid grid3">
+    <img src="images/frame1.jpg" alt="Frame Image 1">
+    <img src="images/frame2.jpg" alt="Frame Image 2">
+    <img src="images/frame3.jpg" alt="Frame Image 3">
+    <img src="images/frame4.jpg" alt="Frame Image 4">
+  </div>
+  <div class="quote">“Photography is the story I fail to put into words.”</div>
+
+  <!-- Image Grid 4: MOMENTS -->
+  <h2>MOMENTS</h2>
+  <div class="image-grid grid4">
+    <img src="images/moment1.jpg" alt="Moment Image 1">
+    <img src="images/moment2.jpg" alt="Moment Image 2">
+    <img src="images/moment3.jpg" alt="Moment Image 3">
+    <img src="images/moment4.jpg" alt="Moment Image 4">
+    <img src="images/moment5.jpg" alt="Moment Image 5">
+    <img src="images/moment6.jpg" alt="Moment Image 6">
+    <img src="images/moment7.jpg" alt="Moment Image 7">
+    <img src="images/moment8.jpg" alt="Moment Image 8">
+  </div>
+  <div class="quote">“Freeze the moment. Frame the soul.”</div>
+
+  <!-- REELS / VIDEOS section -->
+  <h1>REELS</h1>
+  <div class="video-container">
+    <div class="video-wrapper">
+      <img src="images/cover1.jpg" alt="Cover 1" class="cover-image" onclick="startVideo(this)">
+      <video id="video1" loop>
+        <source src="videos/video1.mp4" type="video/mp4">
+      </video>
+      <div class="sound-control" onclick="toggleMute('video1', event)">
+        <img src="images/music_icon_white.png" class="sound-icon" />
+      </div>
+      <div class="play-icon" onclick="startVideo(this)">▶</div>
     </div>
-
-    <h1>CLICKS / REELS</h1>
-
-    <!-- Image Grid 1 -->
-    <h2>TRAVEL</h2>
-    <div class="image-grid grid1">
-        <img src="/Users/yossefkadry/Desktop/imag for website/images.jpeg" alt="Travel Image 1">
-        <img src="/Users/yossefkadry/Desktop/Screenshot 2025-05-06 at 4.05.42 PM.png" alt="Travel Image 2">
-        <img src="/Users/yossefkadry/Desktop/Screenshot 2025-05-06 at 11.28.51 PM.png" alt="Travel Image 3">
-        <img src="/Users/yossefkadry/Desktop/imag for website/Screenshot 2025-05-06 at 12.00.19 AM.png" alt="Travel Image 4">
-        <img src="/Users/yossefkadry/Desktop/DSC01810.jpeg" alt="Travel Image 5">
+    <div class="video-wrapper">
+      <img src="images/cover2.jpg" alt="Cover 2" class="cover-image" onclick="startVideo(this)">
+      <video id="video2" loop>
+        <source src="videos/video2.mp4" type="video/mp4">
+      </video>
+      <div class="sound-control" onclick="toggleMute('video2', event)">
+        <img src="images/music_icon_white.png" class="sound-icon" />
+      </div>
+      <div class="play-icon" onclick="startVideo(this)">▶</div>
     </div>
-    <div class="quote">“Travel is the only thing you buy that makes you richer.”</div>
-
-    <!-- Image Grid 2 -->
-    <h2>STREETS</h2>
-    <div class="image-grid grid2">
-        <img src="p4.jpg" alt="Street Image 1">
-        <img src="p5.jpg" alt="Street Image 2">
-        <img src="p6.jpg" alt="Street Image 3">
-        <img src="p7.jpg" alt="Street Image 4">
+    <div class="video-wrapper">
+      <img src="images/cover3.jpg" alt="Cover 3" class="cover-image" onclick="startVideo(this)">
+      <video id="video3" loop>
+        <source src="videos/video3.mp4" type="video/mp4">
+      </video>
+      <div class="sound-control" onclick="toggleMute('video3', event)">
+        <img src="images/music_icon_white.png" class="sound-icon" />
+      </div>
+      <div class="play-icon" onclick="startVideo(this)">▶</div>
     </div>
-    <div class="quote">“There’s beauty in the everyday chaos.”</div>
+  </div>
 
-    <!-- Image Grid 3 -->
-    <h2>FRAMES</h2>
-    <div class="image-grid grid3">
-        <img src="/Users/yossefkadry/Desktop/Screenshot 2025-05-06 at 4.05.42 PM.png" alt="Frame Image 1">
-        <img src="/Users/yossefkadry/Desktop/Screenshot 2025-05-06 at 4.05.42 PM.png" alt="Frame Image 2">
-        <img src="/Users/yossefkadry/Desktop/Screenshot 2025-05-06 at 4.05.42 PM.png" alt="Frame Image 3">
-        <img src="/Users/yossefkadry/Desktop/Screenshot 2025-05-06 at 4.05.42 PM.png" alt="Frame Image 4">
-    </div>
-    <div class="quote">“Photography is the story I fail to put into words.”</div>
+  <div class="contact-section">
+  <p class="social-text">Email: test@example.com</p>
+  <div class="contact-icons">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
+      <img
+        src="images/instalogo.png"
+        alt="Instagram"
+        class="contact-icon"
+      />
+    </a>
+    <span class="social-text">Instagram</span>
 
-    <!-- Image Grid 4 -->
-    <h2>MOMENTS</h2>
-    <div class="image-grid grid4">
-        <img src="p12.jpg" alt="Moment Image 1">
-        <img src="p13.jpg" alt="Moment Image 2">
-        <img src="p14.jpg" alt="Moment Image 3">
-        <img src="p15.jpg" alt="Moment Image 4">
-        <img src="p16.jpg" alt="Moment Image 5">
-        <img src="p17.jpg" alt="Moment Image 6">
-        <img src="p18.jpg" alt="Moment Image 7">
-        <img src="p19.jpg" alt="Moment Image 8">
-    </div>
-    <div class="quote">“Freeze the moment. Frame the soul.”</div>
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
+      <img
+        src="images/youtubelogo.png"
+        alt="YouTube"
+        class="contact-icon"
+      />
+    </a>
+    <span class="social-text">YouTube</span>
 
-    <!-- REELS / VIDEOS section -->
-    <h1>REELS</h1>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
+      <img
+        src="images/linkedinlogo.png"
+        alt="LinkedIn"
+        class="contact-icon"
+      />
+    </a>
+    <span class="social-text">LinkedIn</span>
+  </div>
+</div>
 
-    <div class="video-container">
-        <div class="video-wrapper">
-            <img src="/Users/yossefkadry/Desktop/DSC01810.jpeg" alt="Cover Image" class="cover-image" onclick="startVideo(this)">
-            <video id="video1" loop>
-                <source src="/Users/yossefkadry/Desktop/C0115_4 2.MP4" type="video/mp4">
-            </video>
-            <div class="sound-control" onclick="toggleMute('video1', event)">
-                <img src="music_icon_white.png" class="sound-icon" />
-            </div>
-            <div class="play-icon" onclick="startVideo(this)">▶</div>
-        </div>
-
-        <div class="video-wrapper">
-            <img src="cover2.jpg" alt="Video Cover" class="cover-image" onclick="startVideo(this)">
-            <video id="video2" loop>
-                <source src="video2.mp4" type="video/mp4">
-            </video>
-            <div class="sound-control" onclick="toggleMute('video2', event)">
-                <img src="music_icon_white.png" class="sound-icon" />
-            </div>
-            <div class="play-icon" onclick="startVideo(this)">▶</div>
-        </div>
-
-        <div class="video-wrapper">
-            <img src="cover3.jpg" alt="Video Cover" class="cover-image" onclick="startVideo(this)">
-            <video id="video3" loop>
-                <source src="video3.mp4" type="video/mp4">
-            </video>
-            <div class="sound-control" onclick="toggleMute('video3', event)">
-                <img src="music_icon_white.png" class="sound-icon" />
-            </div>
-            <div class="play-icon" onclick="startVideo(this)">▶</div>
-        </div>
-
-        <div class="video-wrapper">
-            <img src="/Users/yossefkadry/Desktop/C0161.MP4" alt="Video Cover" class="cover-image" onclick="startVideo(this)">
-            <video id="video4" loop>
-                <source src="/Users/yossefkadry/Desktop/C0161.MP4" type="video/mp4">
-            </video>
-            <div class="sound-control" onclick="toggleMute('video4', event)">
-                <img src="music_icon_white.png" class="sound-icon" />
-            </div>
-            <div class="play-icon" onclick="startVideo(this)">▶</div>
-        </div>
-
-        <div class="video-wrapper">
-            <img src="/Users/yossefkadry/Desktop/C0161.MP4" alt="Video Cover" class="cover-image" onclick="startVideo(this)">
-            <video id="video5" loop>
-                <source src="/Users/yossefkadry/Desktop/C0161.MP4" type="video/mp4">
-            </video>
-            <div class="sound-control" onclick="toggleMute('video5', event)">
-                <img src="music_icon_white.png" class="sound-icon" />
-            </div>
-            <div class="play-icon" onclick="startVideo(this)">▶</div>
-        </div>
-
-        <!-- New Video Wrapper aligned at the bottom right -->
-        <div class="video-wrapper" style="grid-column: 3; grid-row: 2;">
-            <img src="new_cover.jpg" alt="New Video Cover" class="cover-image" onclick="startVideo(this)">
-            <video id="video6" loop>
-                <source src="/Users/yossefkadry/Desktop/C0161.MP4" type="video/mp4">
-            </video>
-            <div class="sound-control" onclick="toggleMute('video6', event)">
-                <img src="music_icon_white.png" class="sound-icon" />
-            </div>
-            <div class="play-icon" onclick="startVideo(this)">▶</div>
-        </div>
-    </div>
-
-    <!-- Contact Us Section -->
-    <div class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@example.com" style="color: white;">info@example.com</a></p>
-        <div class="contact-icons">
-            <a href="mailto:info@example.com">
-                <img src="email_icon.png" alt="Email" class="contact-icon">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="instagram_icon.png" alt="Instagram" class="contact-icon">
-            </a>
-            <a href="https://youtube.com" target="_blank">
-                <img src="youtube_icon.png" alt="YouTube" class="contact-icon">
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <img src="linkedin_icon.png" alt="LinkedIn" class="contact-icon">
-            </a>
-        </div>
-    </div>
-
-    <script>
-        function startVideo(el) {
-            const wrapper = el.closest('.video-wrapper');
-            const video = wrapper.querySelector('video');
-            const cover = wrapper.querySelector('.cover-image');
-            const playIcon = wrapper.querySelector('.play-icon');
-            const soundIcon = wrapper.querySelector('.sound-control');
-
-            cover.style.display = 'none';
-            video.style.display = 'block';
-            playIcon.style.display = 'none';
-            soundIcon.style.display = 'block';
-            video.muted = false;
-            video.play();
-
-            video.onclick = () => {
-                if (video.paused) {
-                    video.play();
-                    playIcon.style.display = 'none';
-                } else {
-                    video.pause();
-                    playIcon.style.display = 'block';
-                }
-            };
-
-            video.addEventListener('mouseenter', () => {
-                if (video.paused) {
-                    playIcon.style.display = 'block';
-                }
-            });
-            video.addEventListener('mouseleave', () => {
-                if (!video.paused) {
-                    playIcon.style.display = 'none';
-                }
-            });
-        }
-
-        function toggleMute(videoId, event) {
-            event.stopPropagation();
-            const video = document.getElementById(videoId);
-            video.muted = !video.muted;
-        }
-    </script>
-
+  <script>
+    function startVideo(el) {
+      const w = el.closest('.video-wrapper');
+      const v = w.querySelector('video');
+      const c = w.querySelector('.cover-image');
+      const p = w.querySelector('.play-icon');
+      const s = w.querySelector('.sound-control');
+      c.style.display = 'none'; v.style.display = 'block'; p.style.display = 'none'; s.style.display = 'block'; v.muted = false; v.play();
+      v.onclick = () => { if (v.paused) { v.play(); p.style.display='none'; } else { v.pause(); p.style.display='block'; }};
+    }
+    function toggleMute(id,e){e.stopPropagation(); const v=document.getElementById(id); v.muted=!v.muted;}
+  </script>
 </body>
 </html>
