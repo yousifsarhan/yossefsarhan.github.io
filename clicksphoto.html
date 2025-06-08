@@ -84,36 +84,13 @@
       margin: 20px auto;
       max-width: 800px;
     }
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      border-radius: 10px;
-    }
-    video {
-      width: 100%;
-      border-radius: 10px;
-      display: none;
-      cursor: pointer;
-    }
-    .cover-image {
-      width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .sound-control {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.5);
-      border-radius: 50%;
-      padding: 5px;
-      cursor: pointer;
-      display: none;
-    }
-    .sound-icon {
-      width: 25px;
-      height: auto;
-    }
+    .video-wrapper { position: relative; width: 100%; border-radius: 10px; }
+    video { width: 100%; border-radius: 10px; display: none; cursor: pointer; }
+    .cover-image { width: 100%; border-radius: 10px; cursor: pointer; }
+    .sound-control { position: absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.5); border-radius:50%; padding:5px; cursor:pointer; display:none; }
+    .sound-icon { width:25px; height:auto; }
+
+    /* Play‐icon replaced with inline SVG for consistency */
     .play-icon {
       position: absolute;
       top: 50%;
@@ -121,67 +98,30 @@
       transform: translate(-50%, -50%);
       width: 60px;
       height: 60px;
-      pointer-events: auto;
       cursor: pointer;
+      pointer-events: auto;
     }
     .play-icon svg {
       width: 100%;
       height: 100%;
     }
-    .video-wrapper:hover .sound-control {
-      display: block;
-    }
 
-    .contact-section {
-      margin: 40px 0;
-      padding: 20px;
-    }
-    .contact-section h2 {
-      font-size: 28px;
-    }
-    .contact-section p {
-      font-size: 16px;
-      margin: 5px 0;
-    }
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    .contact-icon {
-      width: 30px;
-      height: auto;
-      margin: 0 10px;
-    }
+    .video-wrapper:hover .sound-control { display:block; }
 
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-      }
-      .navbar a {
-        margin: 10px 0;
-        font-size: 16px;
-      }
-      .image-grid {
-        grid-template-columns: 1fr !important;
-        padding: 0 10px;
-      }
-      .video-container {
-        grid-template-columns: 1fr;
-        padding: 0 5%;
-      }
-      h1 {
-        font-size: 36px;
-        margin-top: 20px;
-      }
-      h2 {
-        font-size: 28px;
-      }
-      .quote {
-        font-size: 14px;
-      }
+    .contact-section { margin:40px 0; padding:20px; }
+    .contact-section h2 { font-size:28px; }
+    .contact-section p { font-size:16px; margin:5px 0; }
+    .contact-icons { display:flex; justify-content:center; margin-top:10px; }
+    .contact-icon { width:30px; height:auto; margin:0 10px; }
+
+    @media (max-width:768px) {
+      .navbar { flex-direction: column; align-items: center; padding:20px 0; }
+      .navbar a { margin:10px 0; font-size:16px; }
+      .image-grid { grid-template-columns:1fr !important; padding:0 10px; }
+      .video-container { grid-template-columns:1fr; padding:0 5%; }
+      h1 { font-size:36px; margin-top:20px; }
+      h2 { font-size:28px; }
+      .quote { font-size:14px; }
     }
   </style>
 </head>
@@ -203,6 +143,8 @@
     <img src="images/travel1.jpg" alt="Travel Image 1">
     <img src="images/travel2.jpg" alt="Travel Image 2">
     <img src="images/travel3.jpg" alt="Travel Image 3">
+    <img src="images/travel4.jpg" alt="Travel Image 4">
+    <img src="images/travel5.jpg" alt="Travel Image 5">
   </div>
   <div class="quote">“Travel is the only thing you buy that makes you richer.”</div>
 
@@ -292,16 +234,19 @@
   <div class="contact-section">
     <p class="social-text">Email: test@example.com</p>
     <div class="contact-icons">
+      <!-- Instagram -->
       <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
         <img src="images/instalogo.png" alt="Instagram" class="contact-icon" />
       </a>
       <span class="social-text">Instagram</span>
 
+      <!-- YouTube -->
       <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
         <img src="images/youtubelogo.png" alt="YouTube" class="contact-icon" />
       </a>
       <span class="social-text">YouTube</span>
 
+      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
         <img src="images/linkedinlogo.png" alt="LinkedIn" class="contact-icon" />
       </a>
