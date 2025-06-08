@@ -1,132 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CLICKS / REELS - Yousif Sarhan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #121212; color: white; text-align: center; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CLICKS / REELS - Yousif Sarhan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #121212; color: white; text-align: center; }
 
-        .navbar { display: flex; justify-content: center; background-color: transparent; padding: 15px 0; }
-        /* Mobile nav: column */
-        .navbar.mobile { flex-direction: column; position: absolute; top: 0; left: 0; width: 100%; background-color: #121212; }
-        .navbar a { margin: 0 30px; color: white; text-decoration: none; font-weight: bold; font-size: 18px; transition: color 0.3s ease; }
-        .navbar.mobile a { margin: 10px 0; }
+    .navbar { display: flex; justify-content: center; background-color: transparent; padding: 15px 0; }
+    .navbar a { margin: 0 30px; color: white; text-decoration: none; font-weight: bold; font-size: 18px; transition: color 0.3s ease; }
+    .navbar a:hover { color: rgba(255, 255, 255, 0.8); }
 
-        h1 { margin: 40px 0 20px; font-size: 48px; letter-spacing: 2px; font-family: 'Playfair Display', serif; }
-        h2 { margin: 40px 0 10px; font-size: 32px; font-family: 'Playfair Display', serif; }
-        .quote { font-size: 16px; color: #aaa; margin-bottom: 30px; }
+    h1 { margin: 40px 0 20px; font-size: 48px; letter-spacing: 2px; font-family: 'Playfair Display', serif; }
+    h2 { margin: 40px 0 10px; font-size: 32px; font-family: 'Playfair Display', serif; }
+    .quote { font-size: 16px; color: #aaa; margin-bottom: 30px; }
 
-        .image-grid { display: grid; gap: 5px; margin: 0 auto 50px; max-width: 1200px; }
-        .image-grid img { width: 100%; height: auto; border-radius: 10px; object-fit: cover; }
-        /* Desktop grids unchanged */
-        .grid1 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; grid-template-areas: "a b" "a c"; }
-        .grid1 img:nth-child(1) { grid-area: a; }
-        .grid1 img:nth-child(2) { grid-area: b; }
-        .grid1 img:nth-child(3) { grid-area: c; }
+    .image-grid { display: grid; gap: 5px; margin: 0 auto 50px; max-width: 1200px; }
+    .image-grid img { width: 100%; height: auto; border-radius: 10px; object-fit: cover; }
 
-        .grid2 { grid-template-columns: repeat(3, 1fr); grid-template-areas: "d e f" "g g f"; }
-        .grid2 img:nth-child(1) { grid-area: d; }
-        .grid2 img:nth-child(2) { grid-area: e; }
-        .grid2 img:nth-child(3) { grid-area: f; }
-        .grid2 img:nth-child(4) { grid-area: g; }
+    /* Desktop-specific grid layouts */
+    .grid1 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; grid-template-areas: "a b" "a c"; }
+    .grid1 img:nth-child(1) { grid-area: a; }
+    .grid1 img:nth-child(2) { grid-area: b; }
+    .grid1 img:nth-child(3) { grid-area: c; }
 
-        .grid3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; }
-        .grid4 { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); }
+    .grid2 { grid-template-columns: repeat(3, 1fr); grid-template-areas: "d e f" "g g f"; }
+    .grid2 img:nth-child(1) { grid-area: d; }
+    .grid2 img:nth-child(2) { grid-area: e; }
+    .grid2 img:nth-child(3) { grid-area: f; }
+    .grid2 img:nth-child(4) { grid-area: g; }
 
-        .video-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px auto; max-width: 800px; }
-        .video-wrapper { position: relative; width: 100%; border-radius: 10px; }
-        video { width: 100%; border-radius: 10px; display: none; cursor: pointer; }
-        .cover-image { width: 100%; border-radius: 10px; cursor: pointer; }
-        .sound-control { position: absolute; bottom: 10px; right: 10px; background: rgba(0, 0, 0, 0.5); border-radius: 50%; padding: 5px; cursor: pointer; display: none; }
-        .sound-icon { width: 25px; height: auto; }
-        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; font-size: 2em; color: white; display: block; pointer-events: auto; cursor: pointer; }
-        .video-wrapper:hover .sound-control { display: block; }
+    .grid3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; }
+    .grid4 { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); }
 
-        @media (max-width: 768px) {
-            /* Mobile navbar toggle */
-            .navbar { display: none; }
-            .navbar.mobile { display: flex; }
+    .video-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px auto; max-width: 800px; }
+    .video-wrapper { position: relative; width: 100%; border-radius: 10px; }
+    video { width: 100%; border-radius: 10px; display: none; cursor: pointer; }
+    .cover-image { width: 100%; border-radius: 10px; cursor: pointer; }
+    .sound-control { position: absolute; bottom: 10px; right: 10px; background: rgba(0, 0, 0, 0.5); border-radius: 50%; padding: 5px; cursor: pointer; display: none; }
+    .sound-icon { width: 25px; height: auto; }
+    .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; font-size: 2em; color: white; display: block; pointer-events: auto; cursor: pointer; }
+    .video-wrapper:hover .sound-control { display: block; }
 
-            /* Keep image grids single-column on mobile */
-            .image-grid { grid-template-columns: 1fr !important; padding: 0 10px; }
+    @media (max-width: 768px) {
+      /* Keep all desktop layouts but force single column on image grids */
+      .image-grid { grid-template-columns: 1fr !important; padding: 0 10px; }
 
-            /* Videos one column */
-            .video-container { grid-template-columns: 1fr; padding: 0 5%; }
+      /* Stack videos */
+      .video-container { grid-template-columns: 1fr; padding: 0 5%; }
 
-            h1 { font-size: 36px; }
-            h2 { font-size: 28px; }
-            .quote { font-size: 14px; }
-        }
+      /* Vertical navbar on mobile */
+      .navbar { flex-direction: column; align-items: center; background-color: #121212; }
+      .navbar a { margin: 10px 0; font-size: 16px; }
 
-        .contact-section { margin: 40px 0; padding: 20px; }
-        .contact-section h2 { font-size: 28px; }
-        .contact-section p { font-size: 16px; margin: 5px 0; }
-        .contact-icons { display: flex; justify-content: center; margin-top: 10px; }
-        .contact-icon { width: 30px; height: auto; margin: 0 10px; }
-    </style>
+      h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      .quote { font-size: 14px; }
+    }
+
+    .contact-section { margin: 40px 0; padding: 20px; }
+    .contact-section h2 { font-size: 28px; }
+    .contact-section p { font-size: 16px; margin: 5px 0; }
+    .contact-icons { display: flex; justify-content: center; margin-top: 10px; }
+    .contact-icon { width: 30px; height: auto; margin: 0 10px; }
+  </style>
 </head>
 <body>
 
-    <!-- Desktop navbar -->
-    <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="motion.html">MOTION</a>
-        <a href="yousif.html">YOUSIF</a>
-        <a href="clicksphoto.html">CLICKS</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
-    <!-- Mobile navbar -->
-    <div class="navbar mobile">
-        <a href="index.html">HOME</a>
-        <a href="motion.html">MOTION</a>
-        <a href="yousif.html">YOUSIF</a>
-        <a href="clicksphoto.html">CLICKS</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
+  <div class="navbar">
+    <a href="index.html">HOME</a>
+    <a href="motion.html">MOTION</a>
+    <a href="yousif.html">YOUSIF</a>
+    <a href="clicksphoto.html">CLICKS</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
 
-    <h1>CLICKS / REELS</h1>
+  <h1>CLICKS / REELS</h1>
 
-    <h2>TRAVEL</h2>
-    <div class="image-grid grid1">
-        <img src="images/travel1.jpg" alt="Travel Image 1">
-        <img src="images/travel2.jpg" alt="Travel Image 2">
-        <img src="images/travel3.jpg" alt="Travel Image 3">
-        <img src="images/travel4.jpg" alt="Travel Image 4">
-        <img src="images/travel5.jpg" alt="Travel Image 5">
-    </div>
-    <div class="quote">“Travel is the only thing you buy that makes you richer.”</div>
+  <h2>TRAVEL</h2>
+  <div class="image-grid grid1">
+    <img src="images/travel1.jpg" alt="Travel Image 1">
+    <img src="images/travel2.jpg" alt="Travel Image 2">
+    <img src="images/travel3.jpg" alt="Travel Image 3">
+    <img src="images/travel4.jpg" alt="Travel Image 4">
+    <img src="images/travel5.jpg" alt="Travel Image 5">
+  </div>
+  <div class="quote">“Travel is the only thing you buy that makes you richer.”</div>
 
-    <h2>STREETS</h2>
-    <div class="image-grid grid2">
-        <img src="images/street1.jpg" alt="Street Image 1">
-        <img src="images/street2.jpg" alt="Street Image 2">
-        <img src="images/street3.jpg" alt="Street Image 3">
-        <img src="images/street4.jpg" alt="Street Image 4">
-    </div>
-    <div class="quote">“There’s beauty in the everyday chaos.”</div>
+  <h2>STREETS</h2>
+  <div class="image-grid grid2">
+    <img src="images/street1.jpg" alt="Street Image 1">
+    <img src="images/street2.jpg" alt="Street Image 2">
+    <img src="images/street3.jpg" alt="Street Image 3">
+    <img src="images/street4.jpg" alt="Street Image 4">
+  </div>
+  <div class="quote">“There’s beauty in the everyday chaos.”</div>
 
-    <h2>FRAMES</h2>
-    <div class="image-grid grid3">
-        <img src="images/frame1.jpg" alt="Frame Image 1">
-        <img src="images/frame2.jpg" alt="Frame Image 2">
-        <img src="images/frame3.jpg" alt="Frame Image 3">
-        <img src="images/frame4.jpg" alt="Frame Image 4">
-    </div>
-    <div class="quote">“Photography is the story I fail to put into words.”</div>
+  <h2>FRAMES</h2>
+  <div class="image-grid grid3">
+    <img src="images/frame1.jpg" alt="Frame Image 1">
+    <img src="images/frame2.jpg" alt="Frame Image 2">
+    <img src="images/frame3.jpg" alt="Frame Image 3">
+    <img src="images/frame4.jpg" alt="Frame Image 4">
+  </div>
+  <div class="quote">“Photography is the story I fail to put into words.”</div>
 
-    <h2>MOMENTS</h2>
-    <div class="image-grid grid4">
-        <img src="images/moment1.jpg" alt="Moment Image 1">
-        <img src="images/moment2.jpg" alt="Moment Image 2">
-        <img src="images/moment3.jpg" alt="Moment Image 3">
-        <img src="images/moment4.jpg" alt="Moment Image 4">
-        <img src="images/moment5.jpg" alt="Moment Image 5">
-        <img src="images/moment6.jpg" alt="Moment Image 6">
-        <img src="images/moment7.jpg" alt="Moment Image 7">
-        <img src="images/moment8.jpg" alt="Moment Image 8">
-    </div>
-    <div class="quote">“Freeze the moment. Frame the soul.”</div>
-
-    <h1>REELS</n
+  <h2>MOMENTS</n…
