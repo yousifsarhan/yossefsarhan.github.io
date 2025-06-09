@@ -30,7 +30,7 @@
         .navbar a:hover {
             color: rgba(255, 255, 255, 0.8);
         }
-        /* Mobile: stack nav links vertically */
+        /* Mobile: stack nav links vertically and full-width contact grid */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -41,13 +41,13 @@
                 margin: 10px 0;
                 font-size: 16px;
             }
-            /* Mobile: grid layout for contact icons */
             .contact-icons {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 15px;
-                justify-items: center;
                 margin-top: 20px;
+                width: 100%;
+                padding: 0 20px;
             }
         }
 
@@ -89,51 +89,50 @@
 <body>
 
 <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="motion.html">MOTION</a>
-        <a href="yousif.html">YOUSIF</a>
-        <a href="clicksphoto.html">CLICKS</a>
-        <a href="contact.html">CONTACT</a>
+    <a href="index.html">HOME</a>
+    <a href="motion.html">MOTION</a>
+    <a href="yousif.html">YOUSIF</a>
+    <a href="clicksphoto.html">CLICKS</a>
+    <a href="contact.html">CONTACT</a>
+</div>
+
+<h1>Yousif</h1>
+
+<div class="image-container">
+    <img src="/Volumes/hardrive/rocks mikes shoot/DSC01747.jpeg" alt="Description of image">
+</div>
+
+<p>ALL WE DO IS ART</p>
+<p>
+    Louis Ygitra is a German-English director and editor with a passion for artistic approaches, dynamic visuals, and authentic storytelling. His multifaceted background in film and culture shapes his approach, enriching his work with depth and nuance.
+</p>
+<p>
+    With over six years of experience in the industry, Louis initially started as a film editor but also enjoys directing. Super excited about collaborating with creative minds, he aims to create visually captivating and emotionally resonant stories through filmmaking.
+</p>
+
+<div class="contact-section">
+    <h2>Contact Us</h2>
+    <p class="social-text">Email: test@example.com</p>
+    <div class="contact-icons">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
+        <img src="images/instalogo.png" alt="Instagram" class="contact-icon" />
+        <span class="social-text">Instagram</span>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
+        <img src="images/youtubelogo.png" alt="YouTube" class="contact-icon" />
+        <span class="social-text">YouTube</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
+        <img src="images/linkedinlogo.png" alt="LinkedIn" class="contact-icon" />
+        <span class="social-text">LinkedIn</span>
+      </a>
     </div>
-
-
-    <h1>Yousif</h1>
-
-    <div class="image-container">
-        <img src="/Volumes/hardrive/rocks mikes shoot/DSC01747.jpeg" alt="Description of image">
-    </div>
-
-    <p>ALL WE DO IS ART</p>
-    <p>
-        Louis Ygitra is a German-English director and editor with a passion for artistic approaches, dynamic visuals, and authentic storytelling. His multifaceted background in film and culture shapes his approach, enriching his work with depth and nuance.
-    </p>
-    <p>
-        With over six years of experience in the industry, Louis initially started as a film editor but also enjoys directing. Super excited about collaborating with creative minds, he aims to create visually captivating and emotionally resonant stories through filmmaking.
-    </p>
-
-    <div class="contact-section">
-        <h2>Contact Us</h2>
-        <p class="social-text">Email: test@example.com</p>
-        <div class="contact-icons">
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
-            <img src="images/instalogo.png" alt="Instagram" class="contact-icon" />
-          </a>
-          <span class="social-text">Instagram</span>
-
-          <!-- YouTube -->
-          <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
-            <img src="images/youtubelogo.png" alt="YouTube" class="contact-icon" />
-          </a>
-          <span class="social-text">YouTube</span>
-
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
-            <img src="images/linkedinlogo.png" alt="LinkedIn" class="contact-icon" />
-          </a>
-          <span class="social-text">LinkedIn</span>
-        </div>
-    </div>
+</div>
 
 </body>
 </html>
