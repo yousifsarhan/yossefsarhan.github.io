@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yousif Sarhan</title>
+    <title>Contact Us - Yousif Sarhan</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -31,32 +30,6 @@
         .navbar a:hover {
             color: rgba(255, 255, 255, 0.8);
         }
-        /* Ensure contact links never underline */
-        .contact-icons a {
-            text-decoration: none;
-        }
-        /* Desktop: align icon and text, space out evenly and lower icon slightly */
-        @media (min-width: 769px) {
-            .contact-icons {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 60px;
-                margin-top: 10px;
-            }
-            .contact-icons a {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-            }
-            .contact-icon {
-                width: 30px;
-                height: auto;
-                position: relative;
-                top: 2px;
-            }
-        }
-        /* Mobile: stack nav links vertically and full-width contact grid */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -68,91 +41,101 @@
                 font-size: 16px;
             }
             .contact-icons {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
                 margin-top: 20px;
                 width: 100%;
                 padding: 0 20px;
+            }
+            .contact-icons a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
             }
             .contact-icon {
                 width: 40px;
                 height: 40px;
                 position: static;
+                top: 0;
             }
         }
-        h1 {
-            margin: 40px 0;
-            font-size: 48px;
-            letter-spacing: 2px;
-            font-family: 'Playfair Display', serif;
-        }
-        .image-container {
-            margin: 20px 0;
-        }
-        img {
-            width: 60%; /* Reduced from 100% to 60% for 40% smaller */
-            height: auto;
-            max-width: 480px; /* Limit max width */
-            border-radius: 10px;
+            .navbar a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
         }
         .contact-section {
             margin: 40px 0;
-            padding: 20px;
+            padding: 0 20px;
         }
-        .social-text {
-            color: grey;
+        .contact-email {
             font-size: 16px;
-            margin-top: 0;
+            color: grey;
+            margin-bottom: 20px;
+        }
+        .contact-icons a {
+            text-decoration: none;
+        }
+        @media (min-width: 769px) {
+            .contact-icons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 60px;
+            }
+            .contact-icons a {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .contact-icon {
+                width: 30px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        @media (max-width: 768px) {
+            .contact-icons {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            .contact-icon {
+                width: 40px;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="navbar">
-    <a href="index.html">HOME</a>
-    <a href="motion.html">MOTION</a>
-    <a href="yousif.html">YOUSIF</a>
-    <a href="clicksphoto.html">CLICKS</a>
-    <a href="contact.html">CONTACT</a>
-</div>
-
-<h1>Yousif</h1>
-
-<div class="image-container">
-    <img src="/Volumes/hardrive/rocks mikes shoot/DSC01747.jpeg" alt="Description of image">
-</div>
-
-<p>ALL WE DO IS ART</p>
-<p>
-    Louis Ygitra is a German-English director and editor with a passion for artistic approaches, dynamic visuals, and authentic storytelling. His multifaceted background in film and culture shapes his approach, enriching his work with depth and nuance.
-</p>
-<p>
-    With over six years of experience in the industry, Louis initially started as a film editor but also enjoys directing. Super excited about collaborating with creative minds, he aims to create visually captivating and emotionally resonant stories through filmmaking.
-</p>
-
-<div class="contact-section">
-    <h2>Contact Us</h2>
-    <p class="social-text">Email: test@example.com</p>
-    <div class="contact-icons">
-      <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
-        <img src="images/instalogo.png" alt="Instagram" class="contact-icon" />
-        <span class="social-text">Instagram</span>
-      </a>
-      <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
-        <img src="images/youtubelogo.png" alt="YouTube" class="contact-icon" />
-        <span class="social-text">YouTube</span>
-      </a>
-      <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
-        <img src="images/linkedinlogo.png" alt="LinkedIn" class="contact-icon" />
-        <span class="social-text">LinkedIn</span>
-      </a>
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="motion.html">MOTION</a>
+        <a href="yousif.html">YOUSIF</a>
+        <a href="clicksphoto.html">CLICKS</a>
+        <a href="contact.html">CONTACT</a>
     </div>
-</div>
-
+    <h1>Contact Us</h1>
+    <div class="contact-section">
+        <p class="contact-email">info@example.com</p>
+        <div class="contact-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="instagram_icon.png" alt="Instagram" class="contact-icon" />
+                <span class="social-text">Instagram</span>
+            </a>
+            <a href="https://youtube.com" target="_blank">
+                <img src="youtube_icon.png" alt="YouTube" class="contact-icon" />
+                <span class="social-text">YouTube</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank">
+                <img src="linkedin_icon.png" alt="LinkedIn" class="contact-icon" />
+                <span class="social-text">LinkedIn</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
-
 
 
 
