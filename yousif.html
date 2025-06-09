@@ -30,11 +30,24 @@
         .navbar a:hover {
             color: rgba(255, 255, 255, 0.8);
         }
+        /* Mobile: stack nav links vertically */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+            .navbar a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+        }
+
         h1 {
             margin: 40px 0;
             font-size: 48px;
             letter-spacing: 2px;
-            font-family: 'Playfair Display', serif; /* Title font */
+            font-family: 'Playfair Display', serif;
         }
         .image-container {
             margin: 20px 0;
@@ -74,7 +87,6 @@
         <a href="clicksphoto.html">CLICKS</a>
         <a href="contact.html">CONTACT</a>
     </div>
-
 
 
     <h1>Yousif</h1>
