@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - Yousif Sarhan</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -13,14 +13,12 @@
             color: white;
             text-align: center;
         }
-
         .navbar {
             display: flex;
             justify-content: center;
             background-color: transparent;
             padding: 15px 0;
         }
-
         .navbar a {
             margin: 0 30px;
             color: white;
@@ -29,71 +27,87 @@
             font-size: 18px;
             transition: color 0.3s ease;
         }
-
         .navbar a:hover {
             color: rgba(255, 255, 255, 0.8);
         }
-
-        h1 {
-            margin: 40px 0 20px;
-            font-size: 48px;
-            letter-spacing: 2px;
-            font-family: 'Playfair Display', serif;
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+            .navbar a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
         }
-
         .contact-section {
             margin: 40px 0;
-            padding: 20px;
+            padding: 0 20px;
         }
-
         .contact-email {
-            font-size: 36px;
-            margin: 50px 0; /* Increased margin for more space */
-            color: white; /* Email color */
-            font-family: 'Playfair Display', serif; /* Same font as previous */
+            font-size: 16px;
+            color: grey;
+            margin-bottom: 20px;
         }
-
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            margin-bottom: 50px; /* Added space below icons */
+        .contact-icons a {
+            text-decoration: none;
         }
-
-        .contact-icon {
-            width: 30px;
-            height: auto;
-            margin: 0 10px;
+        @media (min-width: 769px) {
+            .contact-icons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 60px;
+            }
+            .contact-icons a {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .contact-icon {
+                width: 30px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        @media (max-width: 768px) {
+            .contact-icons {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            .contact-icon {
+                width: 40px;
+            }
         }
     </style>
 </head>
 <body>
-
-  <div class="navbar">
+    <div class="navbar">
         <a href="index.html">HOME</a>
         <a href="motion.html">MOTION</a>
         <a href="yousif.html">YOUSIF</a>
         <a href="clicksphoto.html">CLICKS</a>
         <a href="contact.html">CONTACT</a>
-    </div>contact.html">CONTACT</a>
     </div>
-
     <h1>Contact Us</h1>
-
     <div class="contact-section">
         <p class="contact-email">info@example.com</p>
         <div class="contact-icons">
             <a href="https://instagram.com" target="_blank">
-                <img src="instagram_icon.png" alt="Instagram" class="contact-icon">
+                <img src="instagram_icon.png" alt="Instagram" class="contact-icon" />
+                <span class="social-text">Instagram</span>
             </a>
             <a href="https://youtube.com" target="_blank">
-                <img src="youtube_icon.png" alt="YouTube" class="contact-icon">
+                <img src="youtube_icon.png" alt="YouTube" class="contact-icon" />
+                <span class="social-text">YouTube</span>
             </a>
             <a href="https://linkedin.com" target="_blank">
-                <img src="linkedin_icon.png" alt="LinkedIn" class="contact-icon">
+                <img src="linkedin_icon.png" alt="LinkedIn" class="contact-icon" />
+                <span class="social-text">LinkedIn</span>
             </a>
         </div>
     </div>
-
 </body>
 </html>
