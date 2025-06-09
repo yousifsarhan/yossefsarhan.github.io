@@ -72,6 +72,7 @@
       max-width: 82.5%;
       border-radius: 10px;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .video-title {
@@ -315,12 +316,17 @@
     </div>
   </div>
 
-  <!-- Reset videos to start at 0 on first play -->
+  <!-- Ensure only one video plays at a time -->
   <script>
-    document.querySelectorAll('video').forEach(video => {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
       video.addEventListener('play', () => {
-        video.currentTime = 0;
-      }, { once: true });
+        videos.forEach(other => {
+          if (other !== video) {
+            other.pause();
+          }
+        });
+      });
     });
   </script>
 </body>
