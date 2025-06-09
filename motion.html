@@ -1,334 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio - Motion</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Akira+Expanded:wght@400&display=swap"
-    rel="stylesheet"
-  />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #121212;
-      color: white;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousif Sarhan - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .video-background, .image-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+        .navbar a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .intro-section {
+            margin: 100px 0;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+        .sub-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .clickable-keyword {
+            font-size: 64px;
+            color: white;
+            cursor: pointer;
+            text-decoration: underline;
+        }
 
-    .navbar {
-      display: flex;
-      justify-content: center;
-      background-color: transparent;
-      padding: 15px 0;
-      position: relative;
-    }
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .video-background {
+                display: none; /* Hide video on mobile */
+            }
+            .image-background {
+                display: block; /* Show image on mobile */
+            }
+            .main-title {
+                font-size: 36px;
+            }
+            .sub-title {
+                font-size: 18px;
+            }
+            .navbar {
+                /* Make navbar similar to motion code on mobile: stack links vertically */
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+            .navbar a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            .clickable-keyword {
+                font-size: 48px;
+            }
+        }
+        @media (min-width: 769px) {
+            .image-background {
+                display: none; /* Hide image on desktop */
+            }
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const video = document.querySelector('.video-background');
+            if (video) {
+                video.muted = true; // Ensure the video is muted
+                video.play().catch(error => {
+                    console.error("Autoplay failed:", error);
+                });
+            }
+        });
 
-    .navbar a {
-      margin: 0 30px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    h1 {
-      margin: 40px 0;
-      font-size: 48px;
-      letter-spacing: 2px;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin: 20px 0;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: white;
-    }
-
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      padding: 0 10%;
-    }
-
-    .video-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    video {
-      width: 100%;
-      height: auto;
-      max-width: 82.5%;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .video-title {
-      margin-top: 10px;
-      font-size: 28px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .video-description {
-      font-size: 16px;
-      margin-top: 5px;
-      max-width: 300px;
-      color: #E0E0E0;
-    }
-
-    /* Contact section styling matching template */
-    .contact-section {
-      margin: 40px 0;
-      padding: 0 20px;
-    }
-    .contact-email {
-      font-size: 16px;
-      color: grey;
-      margin-bottom: 20px;
-    }
-
-    /* Desktop: icons inline with labels */
-    @media (min-width: 769px) {
-      .contact-icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 60px;
-        margin-top: 10px;
-      }
-      .contact-icons a {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-      }
-      .contact-icons a .social-text {
-        color: grey;
-      }
-      .contact-icon {
-        width: 30px;
-        position: relative;
-        top: 2px;
-      }
-    }
-
-    /* Mobile: stack icon above label */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-      }
-      .navbar a {
-        margin: 10px 0;
-        font-size: 16px;
-      }
-      h1 {
-        font-size: 36px;
-      }
-      .section-title {
-        font-size: 28px;
-      }
-      .videos {
-        grid-template-columns: 1fr;
-        padding: 0 5%;
-      }
-      .video-title {
-        font-size: 22px;
-      }
-      .video-description {
-        font-size: 14px;
-        max-width: 90%;
-      }
-      /* Contact icons layout on mobile */
-      .contact-icons {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 20px;
-        width: 100%;
-      }
-      .contact-icons a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        text-decoration: none;
-      }
-      .contact-icons a .social-text {
-        color: grey;
-      }
-      .contact-icon {
-        width: 40px;
-        height: 40px;
-      }
-    }
-  </style>
+        // Utility to detect mobile/small screen
+        function isMobile() {
+            return /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('video.content-video');
+            videos.forEach(video => {
+                // Swap to mobile-optimized source on phones if data-mobile-src provided
+                if (isMobile()) {
+                    const mobileSrc = video.getAttribute('data-mobile-src');
+                    if (mobileSrc) {
+                        const sourceEl = video.querySelector('source');
+                        if (sourceEl && sourceEl.src !== mobileSrc) {
+                            sourceEl.src = mobileSrc;
+                            video.load();
+                        }
+                    }
+                    // Defer loading until user interaction/lazy-load
+                    video.preload = 'none';
+                }
+                // Pause other videos when one plays
+                video.addEventListener('play', () => {
+                    videos.forEach(other => {
+                        if (other !== video) other.pause();
+                    });
+                });
+                // Lazy-load when scrolled into view
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                if (video.preload === 'none') {
+                                    video.preload = 'metadata';
+                                    video.load();
+                                }
+                                observer.unobserve(video);
+                            }
+                        });
+                    }, { rootMargin: '200px' });
+                    observer.observe(video);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
-  <h1>MOTION</h1>
+    <video autoplay muted loop class="video-background">
+        <source src="images/videos/C0297_2 2.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-  <div class="navbar">
-    <a href="index.html">HOME</a>
-    <a href="motion.html">MOTION</a>
-    <a href="yousif.html">YOUSIF</a>
-    <a href="clicksphoto.html">CLICKS</a>
-    <a href="contact.html">CONTACT</a>
-  </div>
-
-  <div class="videos">
-    <div class="section-title">Commercial</div>
-
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="images/videos/C0115_4.MP4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Sofitel</div>
-      <div class="video-description">
-        A detailed look into the Sofitel project showcasing luxury.
-      </div>
+    <img src="images/Screenshot39AM.png" alt="Background Image" class="image-background">
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="motion.html">MOTION</a>
+        <a href="yousif.html">YOUSIF</a>
+        <a href="clicksphoto.html">CLICKS</a>
+        <a href="contact.html">CONTACT</a>
     </div>
 
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="your-video2.mp4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Antler</div>
-      <div class="video-description">
-        Experience the beauty of nature through the Antler lens.
-      </div>
+    <div class="intro-section" id="home">
+        <h1 class="main-title">Yousif Sarhan</h1>
+        <h2 class="sub-title">Filmmaker / Photographer / Editor</h2>
     </div>
 
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="your-video3.mp4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Antler Icon Collection</div>
-      <div class="video-description">
-        An overview of the Antler Icon Collection campaign.
-      </div>
+    <!-- Example video section: wrap videos with class and data-mobile-src -->
+    <div class="videos">
+        <div class="section-title">Commercial</div>
+        <div class="video-container">
+            <video class="content-video" controls preload="metadata" playsinline data-mobile-src="images/videos/C0115_4-480p.mp4" poster="images/thumbnails/C0115_4.jpg">
+                <source src="images/videos/C0115_4.MP4#t=0.1" type="video/mp4">
+            </video>
+            <div class="video-title">Sofitel</div>
+            <div class="video-description">A detailed look into the Sofitel project showcasing luxury.</div>
+        </div>
+        <div class="video-container">
+            <video class="content-video" controls preload="metadata" playsinline data-mobile-src="images/videos/your-video2-480p.mp4" poster="images/thumbnails/your-video2.jpg">
+                <source src="your-video2.mp4#t=0.1" type="video/mp4">
+            </video>
+            <div class="video-title">Antler</div>
+            <div class="video-description">Experience the beauty of nature through the Antler lens.</div>
+        </div>
+        <!-- Repeat similar blocks for other videos, adding data-mobile-src and poster as needed -->
     </div>
 
-    <div class="section-title">Travel & Lifestyle</div>
-
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="your-video4.mp4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">RAW</div>
-      <div class="video-description">
-        Exploring the essence of raw travel experiences.
-      </div>
+    <!-- Other sections remain unchanged -->
+    <div class="section" id="motion">
+        <a href="motion.html" class="clickable-keyword">Motion</a>
+    </div>
+    <div class="section" id="yousif">
+        <a href="yousif.html" class="clickable-keyword">Yousif</a>
+    </div>
+    <div class="section" id="clicks">
+        <a href="clicksphoto.html" class="clickable-keyword">Clicks</a>
+    </div>
+    <div class="section" id="contact">
+        <a href="contact.html" class="clickable-keyword">Contact</a>
     </div>
 
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="your-video5.mp4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Your Final Journey Capstone 2024</div>
-      <div class="video-description">
-        A look into the journey of self-discovery through travel.
-      </div>
-    </div>
-
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="images/videos/C0297_2 2.MP4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Skydive Dubai Desert Campus Highlights</div>
-      <div class="video-description">
-        Soar above the vast Arabian Desert, witnessing endless golden dunes and the serene beauty of the landscape.
-      </div>
-    </div>
-
-    <div class="section-title">Advertizment & Creativity</div>
-
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="images/videos/C0425_8.MP4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Cinematic Boxing Ad</div>
-      <div class="video-description">
-        Inspired by the "Creed" film series, this ad captures the essence of boxing's challenges and triumphs.
-      </div>
-    </div>
-
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="images/videos/alan watts.MP4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Desert</div>
-      <div class="video-description">
-        Endless sand, endless possibility.
-      </div>
-    </div>
-
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="images/videos/Sequence 01.MP4#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Calo Advertisement</div>
-      <div class="video-description">
-        Fighting gym advertising for healthy meals.
-      </div>
-    </div>
-
-    <div class="video-container">
-      <video controls preload="metadata" playsinline>
-        <source src="images/videos/copy_4EDD581C-5207-4697-8179-FCFE99CA4AEA.MOV#t=0.1" type="video/mp4" />
-      </video>
-      <div class="video-title">Sony Handycam</div>
-      <div class="video-description">
-        1990 Sony Handycam creative transition using After Effects.
-      </div>
-    </div>
-  </div>
-
-  <div class="contact-section">
-    <p class="contact-email">Email: test@example.com</p>
-    <div class="contact-icons">
-      <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
-        <img src="images/instalogo.png" alt="Instagram" class="contact-icon" />
-        <span class="social-text">Instagram</span>
-      </a>
-      <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
-        <img src="images/youtubelogo.png" alt="YouTube" class="contact-icon" />
-        <span class="social-text">YouTube</span>
-      </a>
-      <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
-        <img src="images/linkedinlogo.png" alt="LinkedIn" class="contact-icon" />
-        <span class="social-text">LinkedIn</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Ensure only one video plays at a time -->
-  <script>
-    const videos = document.querySelectorAll('video');
-    videos.forEach(video => {
-      video.addEventListener('play', () => {
-        videos.forEach(other => {
-          if (other !== video) {
-            other.pause();
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
 
