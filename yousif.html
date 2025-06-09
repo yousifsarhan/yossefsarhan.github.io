@@ -30,6 +30,10 @@
         .navbar a:hover {
             color: rgba(255, 255, 255, 0.8);
         }
+        /* Ensure contact links never underline */
+        .contact-icons a {
+            text-decoration: none;
+        }
         /* Mobile: stack nav links vertically and full-width contact grid */
         @media (max-width: 768px) {
             .navbar {
@@ -49,15 +53,7 @@
                 width: 100%;
                 padding: 0 20px;
             }
-            /* Remove underline from contact links on mobile */
-            .contact-icons a {
-                text-decoration: none;
-            }
-            .contact-icons a .social-text {
-                text-decoration: none;
-            }
         }
-
         h1 {
             margin: 40px 0;
             font-size: 48px;
@@ -80,8 +76,6 @@
             color: grey;
             font-size: 16px;
             margin-top: 5px;
-            /* Remove any default text decoration */
-            text-decoration: none;
         }
         .contact-icons {
             display: flex;
@@ -145,4 +139,5 @@
 
 </body>
 </html>
+
 
