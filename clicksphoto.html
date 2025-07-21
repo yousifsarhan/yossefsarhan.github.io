@@ -89,7 +89,23 @@
     .cover-image { width: 100%; border-radius: 10px; cursor: pointer; }
     .sound-control { position: absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.5); border-radius:50%; padding:5px; cursor:pointer; display:none; }
     .sound-icon { width:25px; height:auto; }
-    .play-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2em; color:white; pointer-events:auto; cursor:pointer; }
+
+    /* Play‐icon replaced with inline SVG for consistency */
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+    .play-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
     .video-wrapper:hover .sound-control { display:block; }
 
     .contact-section { margin:40px 0; padding:20px; }
@@ -177,8 +193,13 @@
       <div class="sound-control" onclick="toggleMute('video1', event)">
         <img src="images/music_icon_white.png" class="sound-icon" />
       </div>
-      <div class="play-icon" onclick="startVideo(this)">▶</div>
+      <div class="play-icon" onclick="startVideo(this)">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="30,20 70,50 30,80" fill="white"/>
+        </svg>
+      </div>
     </div>
+
     <div class="video-wrapper">
       <img src="images/cover2.jpg" alt="Cover 2" class="cover-image" onclick="startVideo(this)">
       <video id="video2" loop>
@@ -187,8 +208,13 @@
       <div class="sound-control" onclick="toggleMute('video2', event)">
         <img src="images/music_icon_white.png" class="sound-icon" />
       </div>
-      <div class="play-icon" onclick="startVideo(this)">▶</div>
+      <div class="play-icon" onclick="startVideo(this)">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="30,20 70,50 30,80" fill="white"/>
+        </svg>
+      </div>
     </div>
+
     <div class="video-wrapper">
       <img src="images/cover3.jpg" alt="Cover 3" class="cover-image" onclick="startVideo(this)">
       <video id="video3" loop>
@@ -197,44 +223,36 @@
       <div class="sound-control" onclick="toggleMute('video3', event)">
         <img src="images/music_icon_white.png" class="sound-icon" />
       </div>
-      <div class="play-icon" onclick="startVideo(this)">▶</div>
+      <div class="play-icon" onclick="startVideo(this)">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="30,20 70,50 30,80" fill="white"/>
+        </svg>
+      </div>
     </div>
   </div>
 
   <div class="contact-section">
-  <p class="social-text">Email: test@example.com</p>
-  <div class="contact-icons">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
-      <img
-        src="images/instalogo.png"
-        alt="Instagram"
-        class="contact-icon"
-      />
-    </a>
-    <span class="social-text">Instagram</span>
+    <p class="social-text">Email: test@example.com</p>
+    <div class="contact-icons">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/yousefkadry1/" target="_blank" rel="noopener noreferrer">
+        <img src="images/instalogo.png" alt="Instagram" class="contact-icon" />
+      </a>
+      <span class="social-text">Instagram</span>
 
-    <!-- YouTube -->
-    <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
-      <img
-        src="images/youtubelogo.png"
-        alt="YouTube"
-        class="contact-icon"
-      />
-    </a>
-    <span class="social-text">YouTube</span>
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@yousifkadry1" target="_blank" rel="noopener noreferrer">
+        <img src="images/youtubelogo.png" alt="YouTube" class="contact-icon" />
+      </a>
+      <span class="social-text">YouTube</span>
 
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
-      <img
-        src="images/linkedinlogo.png"
-        alt="LinkedIn"
-        class="contact-icon"
-      />
-    </a>
-    <span class="social-text">LinkedIn</span>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/yossef-kadry-b92062144/" target="_blank" rel="noopener noreferrer">
+        <img src="images/linkedinlogo.png" alt="LinkedIn" class="contact-icon" />
+      </a>
+      <span class="social-text">LinkedIn</span>
+    </div>
   </div>
-</div>
 
   <script>
     function startVideo(el) {
@@ -243,10 +261,32 @@
       const c = w.querySelector('.cover-image');
       const p = w.querySelector('.play-icon');
       const s = w.querySelector('.sound-control');
-      c.style.display = 'none'; v.style.display = 'block'; p.style.display = 'none'; s.style.display = 'block'; v.muted = false; v.play();
-      v.onclick = () => { if (v.paused) { v.play(); p.style.display='none'; } else { v.pause(); p.style.display='block'; }};
+      c.style.display = 'none';
+      v.style.display = 'block';
+      p.style.display = 'none';
+      s.style.display = 'block';
+      v.muted = false;
+      v.play();
+      v.onclick = () => {
+        if (v.paused) {
+          v.play();
+          p.style.display = 'none';
+        } else {
+          v.pause();
+          p.style.display = 'block';
+        }
+      };
     }
-    function toggleMute(id,e){e.stopPropagation(); const v=document.getElementById(id); v.muted=!v.muted;}
+    function toggleMute(id, e) {
+      e.stopPropagation();
+      const v = document.getElementById(id);
+      v.muted = !v.muted;
+    }
   </script>
+
 </body>
 </html>
+
+
+
+
