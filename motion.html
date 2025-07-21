@@ -93,17 +93,18 @@
       color: #E0E0E0;
     }
 
+    /* Contact section styling matching template */
     .contact-section {
       margin: 40px 0;
       padding: 0 20px;
     }
-
     .contact-email {
       font-size: 16px;
       color: grey;
       margin-bottom: 20px;
     }
 
+    /* Desktop: icons inline with labels */
     @media (min-width: 769px) {
       .contact-icons {
         display: flex;
@@ -112,18 +113,15 @@
         gap: 60px;
         margin-top: 10px;
       }
-
       .contact-icons a {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         text-decoration: none;
       }
-
       .contact-icons a .social-text {
         color: grey;
       }
-
       .contact-icon {
         width: 30px;
         position: relative;
@@ -131,40 +129,35 @@
       }
     }
 
+    /* Mobile: stack icon above label, navbar vertical */
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
       }
-
       .navbar a {
         margin: 10px 0;
         font-size: 16px;
       }
-
       h1 {
         font-size: 36px;
       }
-
       .section-title {
         font-size: 28px;
       }
-
       .videos {
         grid-template-columns: 1fr;
         padding: 0 5%;
       }
-
       .video-title {
         font-size: 22px;
       }
-
       .video-description {
         font-size: 14px;
         max-width: 90%;
       }
-
+      /* Contact icons layout on mobile */
       .contact-icons {
         display: flex;
         justify-content: space-around;
@@ -172,7 +165,6 @@
         margin-top: 20px;
         width: 100%;
       }
-
       .contact-icons a {
         display: flex;
         flex-direction: column;
@@ -180,11 +172,9 @@
         gap: 6px;
         text-decoration: none;
       }
-
       .contact-icons a .social-text {
         color: grey;
       }
-
       .contact-icon {
         width: 40px;
         height: 40px;
@@ -205,7 +195,133 @@
   </div>
 
   <div class="videos">
-    <!-- Your video-container blocks go here (unchanged) -->
+    <!-- Example: repeat for each section -->
+    <div class="section-title">Commercial</div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/C0115_4-480p.mp4"
+             poster="images/thumbnails/C0115_4.jpg">
+        <source src="images/videos/C0115_4.MP4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Sofitel</div>
+      <div class="video-description">
+        A detailed look into the Sofitel project showcasing luxury.
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/video_1_5b31247df3a14813b1142f750bd0a395.MP4"
+             poster="images/thumbnails/your-video2.jpg">
+        <source src="images/videos/video_1_5b31247df3a14813b1142f750bd0a395.MP4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Rice Field Shots</div>
+      <div class="video-description">
+        Experience the beauty of nature through the Another lens.
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/your-video3-480p.mp4"
+             poster="images/thumbnails/your-video3.jpg">
+        <source src="your-video3.mp4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Antler Icon Collection</div>
+      <div class="video-description">
+        An overview of the Antler Icon Collection campaign.
+      </div>
+    </div>
+
+    <div class="section-title">Travel & Lifestyle</div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/DSC02680_22.mp4"
+             poster="images/thumbnails/your-video4.jpg">
+        <source src="images/videos/DSC02680_22.mp4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">8mm Bali</div>
+      <div class="video-description">
+        Exploring the essence of raw travel experiences.
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/your-video5-480p.mp4"
+             poster="images/thumbnails/your-video5.jpg">
+        <source src="your-video5.mp4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Your Final Journey Capstone 2024</div>
+      <div class="video-description">
+        A look into the journey of self-discovery through travel.
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/C0297_2-480p.mp4"
+             poster="images/thumbnails/C0297_2.jpg">
+        <source src="images/videos/C0297_2 2.MP4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Skydive Dubai Desert Campus Highlights</div>
+      <div class="video-description">
+        Soar above the vast Arabian Desert, witnessing endless golden dunes and the serene beauty of the landscape.
+      </div>
+    </div>
+
+    <div class="section-title">Advertizment & Creativity</div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/C0425_8-480p.mp4"
+             poster="images/thumbnails/C0425_8.jpg">
+        <source src="images/videos/C0425_8.MP4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Cinematic Boxing Ad</div>
+      <div class="video-description">
+        Inspired by the "Creed" film series, this ad captures the essence of boxing's challenges and triumphs.
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/alan-watts-480p.mp4"
+             poster="images/thumbnails/alan-watts.jpg">
+        <source src="images/videos/alan watts.MP4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Desert</div>
+      <div class="video-description">
+        Endless sand, endless possibility.
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/sequence-480p.mp4"
+             poster="images/thumbnails/sequence.jpg">
+        <source src="images/videos/Sequence 01.MP4#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Calo Advertisement</div>
+      <div class="video-description">
+        Fighting gym advertising for healthy meals.
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video class="content-video" controls preload="metadata" playsinline
+             data-mobile-src="images/videos/sony-handicam-480p.mp4"
+             poster="images/thumbnails/sony-handicam.jpg">
+        <source src="images/videos/copy_4EDD581C-5207-4697-8179-FCFE99CA4AEA.MOV#t=0.1" type="video/mp4" />
+      </video>
+      <div class="video-title">Sony Handycam</div>
+      <div class="video-description">
+        1990 Sony Handycam creative transition using After Effects.
+      </div>
+    </div>
+
   </div>
 
   <div class="contact-section">
@@ -226,36 +342,43 @@
     </div>
   </div>
 
+  <!-- Scripts to improve mobile load: swap source, lazy-load, pause others -->
   <script>
+    // Detect mobile/small screen
     function isMobile() {
       return /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
     }
-
     document.addEventListener('DOMContentLoaded', () => {
       const videos = document.querySelectorAll('video.content-video');
       videos.forEach(video => {
+        // On mobile: swap to smaller source if provided
         if (isMobile()) {
           const mobileSrc = video.getAttribute('data-mobile-src');
-          const sourceEl = video.querySelector('source');
-          if (mobileSrc && sourceEl && !sourceEl.src.includes(mobileSrc)) {
-            sourceEl.src = mobileSrc;
-            video.load();
+          if (mobileSrc) {
+            const sourceEl = video.querySelector('source');
+            if (sourceEl && !sourceEl.src.includes(mobileSrc)) {
+              sourceEl.src = mobileSrc;
+              video.load();
+            }
           }
+          // Defer loading until user interacts or scrolls into view
           video.preload = 'none';
         }
-
+        // Pause other videos when one plays
         video.addEventListener('play', () => {
           videos.forEach(other => {
             if (other !== video) other.pause();
           });
         });
-
+        // Lazy-load when scrolled into view
         if ('IntersectionObserver' in window) {
           const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-              if (entry.isIntersecting && video.preload === 'none') {
-                video.preload = 'metadata';
-                video.load();
+              if (entry.isIntersecting) {
+                if (video.preload === 'none') {
+                  video.preload = 'metadata';
+                  video.load();
+                }
                 observer.unobserve(video);
               }
             });
@@ -265,7 +388,5 @@
       });
     });
   </script>
-
 </body>
 </html>
-
